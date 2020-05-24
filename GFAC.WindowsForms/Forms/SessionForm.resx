@@ -1,0 +1,819 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="SelectFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>282, 507</value>
+  </data>
+  <data name="SelectFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 23</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="SelectFile.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="SelectFile.Text" xml:space="preserve">
+    <value>Select File</value>
+  </data>
+  <data name="&gt;&gt;SelectFile.Name" xml:space="preserve">
+    <value>SelectFile</value>
+  </data>
+  <data name="&gt;&gt;SelectFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectFile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SelectFile.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="lblImportFile.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblImportFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>539, 507</value>
+  </data>
+  <data name="lblImportFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lblImportFile.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblImportFile.Name" xml:space="preserve">
+    <value>lblImportFile</value>
+  </data>
+  <data name="&gt;&gt;lblImportFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblImportFile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblImportFile.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="ImportFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 144</value>
+  </data>
+  <data name="ImportFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 23</value>
+  </data>
+  <data name="ImportFile.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="ImportFile.Text" xml:space="preserve">
+    <value>Import File</value>
+  </data>
+  <data name="&gt;&gt;ImportFile.Name" xml:space="preserve">
+    <value>ImportFile</value>
+  </data>
+  <data name="&gt;&gt;ImportFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ImportFile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ImportFile.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="SetDefaultProfile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>411, 507</value>
+  </data>
+  <data name="SetDefaultProfile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 23</value>
+  </data>
+  <data name="SetDefaultProfile.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="SetDefaultProfile.Text" xml:space="preserve">
+    <value>Set Default Profile</value>
+  </data>
+  <data name="&gt;&gt;SetDefaultProfile.Name" xml:space="preserve">
+    <value>SetDefaultProfile</value>
+  </data>
+  <data name="&gt;&gt;SetDefaultProfile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SetDefaultProfile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SetDefaultProfile.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="lblProfile.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblProfile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>542, 483</value>
+  </data>
+  <data name="lblProfile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lblProfile.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lblProfile.Name" xml:space="preserve">
+    <value>lblProfile</value>
+  </data>
+  <data name="&gt;&gt;lblProfile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblProfile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblProfile.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="GetProfiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 507</value>
+  </data>
+  <data name="GetProfiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 23</value>
+  </data>
+  <data name="GetProfiles.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="GetProfiles.Text" xml:space="preserve">
+    <value>Get Profiles</value>
+  </data>
+  <data name="&gt;&gt;GetProfiles.Name" xml:space="preserve">
+    <value>GetProfiles</value>
+  </data>
+  <data name="&gt;&gt;GetProfiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GetProfiles.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GetProfiles.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="SaveProfile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 507</value>
+  </data>
+  <data name="SaveProfile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 23</value>
+  </data>
+  <data name="SaveProfile.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="SaveProfile.Text" xml:space="preserve">
+    <value>SaveProfile</value>
+  </data>
+  <data name="&gt;&gt;SaveProfile.Name" xml:space="preserve">
+    <value>SaveProfile</value>
+  </data>
+  <data name="&gt;&gt;SaveProfile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SaveProfile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SaveProfile.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="lblCalculationProfile.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCalculationProfile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 62</value>
+  </data>
+  <data name="lblCalculationProfile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="lblCalculationProfile.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lblCalculationProfile.Text" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;lblCalculationProfile.Name" xml:space="preserve">
+    <value>lblCalculationProfile</value>
+  </data>
+  <data name="&gt;&gt;lblCalculationProfile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCalculationProfile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblCalculationProfile.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="btnSelectProfile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>646, 54</value>
+  </data>
+  <data name="btnSelectProfile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 24</value>
+  </data>
+  <data name="btnSelectProfile.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnSelectProfile.Text" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;btnSelectProfile.Name" xml:space="preserve">
+    <value>btnSelectProfile</value>
+  </data>
+  <data name="&gt;&gt;btnSelectProfile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSelectProfile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnSelectProfile.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="lblInputFile.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblInputFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblInputFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 105</value>
+  </data>
+  <data name="lblInputFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="lblInputFile.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lblInputFile.Text" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;lblInputFile.Name" xml:space="preserve">
+    <value>lblInputFile</value>
+  </data>
+  <data name="&gt;&gt;lblInputFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblInputFile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblInputFile.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="btnSelectFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSelectFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>646, 98</value>
+  </data>
+  <data name="btnSelectFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 24</value>
+  </data>
+  <data name="btnSelectFile.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btnSelectFile.Text" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;btnSelectFile.Name" xml:space="preserve">
+    <value>btnSelectFile</value>
+  </data>
+  <data name="&gt;&gt;btnSelectFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSelectFile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnSelectFile.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="txtInputFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 98</value>
+  </data>
+  <data name="txtInputFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>496, 20</value>
+  </data>
+  <data name="txtInputFile.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;txtInputFile.Name" xml:space="preserve">
+    <value>txtInputFile</value>
+  </data>
+  <data name="&gt;&gt;txtInputFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtInputFile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtInputFile.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;DataGridSource.Name" xml:space="preserve">
+    <value>DataGridSource</value>
+  </data>
+  <data name="&gt;&gt;DataGridSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataGridSource.Parent" xml:space="preserve">
+    <value>tabSource</value>
+  </data>
+  <data name="&gt;&gt;DataGridSource.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabSource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabSource.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabSource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>829, 301</value>
+  </data>
+  <data name="tabSource.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabSource.Text" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tabSource.Name" xml:space="preserve">
+    <value>tabSource</value>
+  </data>
+  <data name="&gt;&gt;tabSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSource.Parent" xml:space="preserve">
+    <value>tabsProcess</value>
+  </data>
+  <data name="&gt;&gt;tabSource.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="DataGridSource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="DataGridSource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>826, 302</value>
+  </data>
+  <data name="DataGridSource.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;DataGridSource.Name" xml:space="preserve">
+    <value>DataGridSource</value>
+  </data>
+  <data name="&gt;&gt;DataGridSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataGridSource.Parent" xml:space="preserve">
+    <value>tabSource</value>
+  </data>
+  <data name="&gt;&gt;DataGridSource.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dataGridResponses.Name" xml:space="preserve">
+    <value>dataGridResponses</value>
+  </data>
+  <data name="&gt;&gt;dataGridResponses.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridResponses.Parent" xml:space="preserve">
+    <value>tabResponses</value>
+  </data>
+  <data name="&gt;&gt;dataGridResponses.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabResponses.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabResponses.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabResponses.Size" type="System.Drawing.Size, System.Drawing">
+    <value>829, 301</value>
+  </data>
+  <data name="tabResponses.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabResponses.Text" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;tabResponses.Name" xml:space="preserve">
+    <value>tabResponses</value>
+  </data>
+  <data name="&gt;&gt;tabResponses.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabResponses.Parent" xml:space="preserve">
+    <value>tabsProcess</value>
+  </data>
+  <data name="&gt;&gt;tabResponses.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="dataGridResponses.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="dataGridResponses.Size" type="System.Drawing.Size, System.Drawing">
+    <value>823, 297</value>
+  </data>
+  <data name="dataGridResponses.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;dataGridResponses.Name" xml:space="preserve">
+    <value>dataGridResponses</value>
+  </data>
+  <data name="&gt;&gt;dataGridResponses.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridResponses.Parent" xml:space="preserve">
+    <value>tabResponses</value>
+  </data>
+  <data name="&gt;&gt;dataGridResponses.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dataGridFinalScore.Name" xml:space="preserve">
+    <value>dataGridFinalScore</value>
+  </data>
+  <data name="&gt;&gt;dataGridFinalScore.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridFinalScore.Parent" xml:space="preserve">
+    <value>tabFinalScore</value>
+  </data>
+  <data name="&gt;&gt;dataGridFinalScore.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabFinalScore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabFinalScore.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabFinalScore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>829, 301</value>
+  </data>
+  <data name="tabFinalScore.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabFinalScore.Text" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tabFinalScore.Name" xml:space="preserve">
+    <value>tabFinalScore</value>
+  </data>
+  <data name="&gt;&gt;tabFinalScore.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabFinalScore.Parent" xml:space="preserve">
+    <value>tabsProcess</value>
+  </data>
+  <data name="&gt;&gt;tabFinalScore.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="dataGridFinalScore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, -1</value>
+  </data>
+  <data name="dataGridFinalScore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>826, 302</value>
+  </data>
+  <data name="dataGridFinalScore.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;dataGridFinalScore.Name" xml:space="preserve">
+    <value>dataGridFinalScore</value>
+  </data>
+  <data name="&gt;&gt;dataGridFinalScore.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridFinalScore.Parent" xml:space="preserve">
+    <value>tabFinalScore</value>
+  </data>
+  <data name="&gt;&gt;dataGridFinalScore.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabsProcess.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 174</value>
+  </data>
+  <data name="tabsProcess.Size" type="System.Drawing.Size, System.Drawing">
+    <value>837, 327</value>
+  </data>
+  <data name="tabsProcess.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;tabsProcess.Name" xml:space="preserve">
+    <value>tabsProcess</value>
+  </data>
+  <data name="&gt;&gt;tabsProcess.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabsProcess.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabsProcess.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="txtSessionName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 12</value>
+  </data>
+  <data name="txtSessionName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>496, 20</value>
+  </data>
+  <data name="txtSessionName.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;txtSessionName.Name" xml:space="preserve">
+    <value>txtSessionName</value>
+  </data>
+  <data name="&gt;&gt;txtSessionName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSessionName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtSessionName.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblSessionName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSessionName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSessionName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 19</value>
+  </data>
+  <data name="lblSessionName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="lblSessionName.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lblSessionName.Text" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;lblSessionName.Name" xml:space="preserve">
+    <value>lblSessionName</value>
+  </data>
+  <data name="&gt;&gt;lblSessionName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSessionName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblSessionName.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnSaveSession.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSaveSession.Location" type="System.Drawing.Point, System.Drawing">
+    <value>942, 14</value>
+  </data>
+  <data name="btnSaveSession.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 23</value>
+  </data>
+  <data name="btnSaveSession.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="btnSaveSession.Text" xml:space="preserve">
+    <value>SaveSession</value>
+  </data>
+  <data name="&gt;&gt;btnSaveSession.Name" xml:space="preserve">
+    <value>btnSaveSession</value>
+  </data>
+  <data name="&gt;&gt;btnSaveSession.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSaveSession.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnSaveSession.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnSaveASSession.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSaveASSession.Location" type="System.Drawing.Point, System.Drawing">
+    <value>942, 43</value>
+  </data>
+  <data name="btnSaveASSession.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 23</value>
+  </data>
+  <data name="btnSaveASSession.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="btnSaveASSession.Text" xml:space="preserve">
+    <value>SaveASSession</value>
+  </data>
+  <data name="&gt;&gt;btnSaveASSession.Name" xml:space="preserve">
+    <value>btnSaveASSession</value>
+  </data>
+  <data name="&gt;&gt;btnSaveASSession.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSaveASSession.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnSaveASSession.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnLoadSession.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnLoadSession.Location" type="System.Drawing.Point, System.Drawing">
+    <value>942, 72</value>
+  </data>
+  <data name="btnLoadSession.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 23</value>
+  </data>
+  <data name="btnLoadSession.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="btnLoadSession.Text" xml:space="preserve">
+    <value>LoadSession</value>
+  </data>
+  <data name="&gt;&gt;btnLoadSession.Name" xml:space="preserve">
+    <value>btnLoadSession</value>
+  </data>
+  <data name="&gt;&gt;btnLoadSession.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnLoadSession.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnLoadSession.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnProfileForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnProfileForm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>586, 507</value>
+  </data>
+  <data name="btnProfileForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 23</value>
+  </data>
+  <data name="btnProfileForm.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="btnProfileForm.Text" xml:space="preserve">
+    <value>Go To Profile Form</value>
+  </data>
+  <data name="&gt;&gt;btnProfileForm.Name" xml:space="preserve">
+    <value>btnProfileForm</value>
+  </data>
+  <data name="&gt;&gt;btnProfileForm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnProfileForm.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnProfileForm.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtProfile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 58</value>
+  </data>
+  <data name="txtProfile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>496, 20</value>
+  </data>
+  <data name="txtProfile.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;txtProfile.Name" xml:space="preserve">
+    <value>txtProfile</value>
+  </data>
+  <data name="&gt;&gt;txtProfile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtProfile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtProfile.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1131, 538</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>MainForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SessionForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

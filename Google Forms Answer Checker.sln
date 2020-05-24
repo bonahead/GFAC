@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GFAC.WindowsForms", "GFAC.WindowsForms\GFAC.WindowsForms.csproj", "{A9F0F406-DF6A-48EA-A9F0-6C180AD01C2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GFAC", "GFAC\GFAC.csproj", "{279C267A-0CB2-47F3-8489-3A0B9C4C613C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9F0F406-DF6A-48EA-A9F0-6C180AD01C2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9F0F406-DF6A-48EA-A9F0-6C180AD01C2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9F0F406-DF6A-48EA-A9F0-6C180AD01C2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9F0F406-DF6A-48EA-A9F0-6C180AD01C2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{279C267A-0CB2-47F3-8489-3A0B9C4C613C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{279C267A-0CB2-47F3-8489-3A0B9C4C613C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{279C267A-0CB2-47F3-8489-3A0B9C4C613C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{279C267A-0CB2-47F3-8489-3A0B9C4C613C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2DBFAE7C-D9A3-4940-974C-8B2E2939FE57}
+	EndGlobalSection
+EndGlobal
