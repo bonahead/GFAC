@@ -18,18 +18,17 @@ namespace GFAC
         {
             UniqueRepsonses = new List<UniqueResponses>();
         }
-        public UniqueResponseCollection CollectUniqueResponses(SourceFile sourceFile,
-            Profile profile)
+        public UniqueResponseCollection CollectUniqueResponses(Session session)
         {
-            if (sourceFile == null ||
-                    profile == null)
+            if (session.SourceFile == null ||
+                    session.Profile == null)
                 return null;
 
-            SourceFile = sourceFile;
-            Profile = profile;
+            SourceFile = session.SourceFile;
+            Profile = session.Profile;
             UniqueResponseCollection returnValue = new UniqueResponseCollection();
             bool firstRow = true;
-            foreach (Row row in sourceFile.Rows)
+            foreach (Row row in SourceFile.Rows)
             {
                 if (firstRow)
                 {

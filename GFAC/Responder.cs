@@ -25,15 +25,15 @@ namespace GFAC
         private SourceFile SourceFile { get; set; }
         private Profile Profile { get; set; }
         private UniqueResponseCollection UniqueResponseCollection { get; set; }
-        public Responders ProcessResponders(SourceFile sourceFile, Profile profile, UniqueResponseCollection uniqueResponseCollection)
+        public Responders ProcessResponders(Session session, UniqueResponseCollection uniqueResponseCollection) 
         {
-            if (sourceFile == null ||
-                    profile == null ||
+            if (session.SourceFile == null ||
+                    session.Profile == null ||
                     uniqueResponseCollection == null)
                 return null;
 
-            SourceFile = sourceFile;
-            Profile = profile;
+            SourceFile = session.SourceFile;
+            Profile = session.Profile;
             UniqueResponseCollection = uniqueResponseCollection;
             Responders returnValue = new Responders();
 

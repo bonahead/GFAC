@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using GFAC.Common;
+using System;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using GFAC.Common;
 using System.Resources;
-using GFAC.OverallCalculationSession.Objects;
-using GFAC.CalulationSession.Objects;
-using GFAC.OverallCalculationSession.Handlers;
+using System.Windows.Forms;
 using static GFAC.Common.Enumerations;
 
 namespace GFAC.WindowsForms.Forms
@@ -172,15 +164,12 @@ namespace GFAC.WindowsForms.Forms
                 Functions.SelectFile(FileType.OverallSession, true) :
                 _overallSession.FilePath_Name;
 
-            OverallSessionHandler ph = new OverallSessionHandler(filepath, _overallSession);
-            _overallSession = ph.ExportOverallSession();
+            _overallSession = OverallSession.ExportOverallSession(filepath, _overallSession);
         }
         private void btnLoadOverallSession_Click(object sender, EventArgs e)
         {
             string filepath = Functions.SelectFile(FileType.OverallSession, false);
-
-            OverallSessionHandler ph = new OverallSessionHandler(filepath);
-            OverallSession overallSession = ph.ImportOverallSession();
+            OverallSession overallSession = OverallSession.ImportOverallSession(filepath);
 
             if (overallSession != null)
             {

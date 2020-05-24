@@ -141,7 +141,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SelectFile.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>17</value>
   </data>
   <data name="lblImportFile.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -165,55 +165,28 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblImportFile.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>16</value>
   </data>
-  <data name="ImportFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 144</value>
+  <data name="btnImportFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="ImportFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 23</value>
+  <data name="btnImportFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
-  <data name="ImportFile.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="btnImportFile.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
   </data>
-  <data name="ImportFile.Text" xml:space="preserve">
-    <value>Import File</value>
+  <data name="&gt;&gt;btnImportFile.Name" xml:space="preserve">
+    <value>btnImportFile</value>
   </data>
-  <data name="&gt;&gt;ImportFile.Name" xml:space="preserve">
-    <value>ImportFile</value>
-  </data>
-  <data name="&gt;&gt;ImportFile.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnImportFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ImportFile.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnImportFile.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;ImportFile.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="SetDefaultProfile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>411, 507</value>
-  </data>
-  <data name="SetDefaultProfile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 23</value>
-  </data>
-  <data name="SetDefaultProfile.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="SetDefaultProfile.Text" xml:space="preserve">
-    <value>Set Default Profile</value>
-  </data>
-  <data name="&gt;&gt;SetDefaultProfile.Name" xml:space="preserve">
-    <value>SetDefaultProfile</value>
-  </data>
-  <data name="&gt;&gt;SetDefaultProfile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SetDefaultProfile.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;SetDefaultProfile.ZOrder" xml:space="preserve">
-    <value>17</value>
+  <data name="&gt;&gt;btnImportFile.ZOrder" xml:space="preserve">
+    <value>15</value>
   </data>
   <data name="lblProfile.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -237,61 +210,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblProfile.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="GetProfiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 507</value>
-  </data>
-  <data name="GetProfiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 23</value>
-  </data>
-  <data name="GetProfiles.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="GetProfiles.Text" xml:space="preserve">
-    <value>Get Profiles</value>
-  </data>
-  <data name="&gt;&gt;GetProfiles.Name" xml:space="preserve">
-    <value>GetProfiles</value>
-  </data>
-  <data name="&gt;&gt;GetProfiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GetProfiles.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GetProfiles.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="SaveProfile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 507</value>
-  </data>
-  <data name="SaveProfile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 23</value>
-  </data>
-  <data name="SaveProfile.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="SaveProfile.Text" xml:space="preserve">
-    <value>SaveProfile</value>
-  </data>
-  <data name="&gt;&gt;SaveProfile.Name" xml:space="preserve">
-    <value>SaveProfile</value>
-  </data>
-  <data name="&gt;&gt;SaveProfile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SaveProfile.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;SaveProfile.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
   <data name="lblCalculationProfile.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblCalculationProfile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 62</value>
+    <value>15, 102</value>
   </data>
   <data name="lblCalculationProfile.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 13</value>
@@ -315,7 +240,7 @@
     <value>13</value>
   </data>
   <data name="btnSelectProfile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>646, 54</value>
+    <value>646, 94</value>
   </data>
   <data name="btnSelectProfile.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 24</value>
@@ -346,7 +271,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblInputFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 105</value>
+    <value>15, 62</value>
   </data>
   <data name="lblInputFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 13</value>
@@ -373,7 +298,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnSelectFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>646, 98</value>
+    <value>646, 55</value>
   </data>
   <data name="btnSelectFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 24</value>
@@ -397,7 +322,7 @@
     <value>10</value>
   </data>
   <data name="txtInputFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 98</value>
+    <value>128, 55</value>
   </data>
   <data name="txtInputFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>496, 20</value>
@@ -742,7 +667,7 @@
     <value>2</value>
   </data>
   <data name="txtProfile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 58</value>
+    <value>128, 98</value>
   </data>
   <data name="txtProfile.Size" type="System.Drawing.Size, System.Drawing">
     <value>496, 20</value>

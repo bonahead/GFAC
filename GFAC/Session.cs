@@ -11,17 +11,6 @@ namespace GFAC
         public Profile Profile { set; get; }
         public Responders Responders { get; set; }
         public UniqueResponses UniqueResponses { get; set; }
-        public string FilePath_Name
-        {
-            get
-            {
-                if (string.IsNullOrEmpty(this.FilePath) ||
-                string.IsNullOrEmpty(this.FileName))
-                    return string.Empty;
-                else
-                    return $"{this.FilePath}\\{this.FileName}.ssn";
-            }
-        }
         public Session()
         {
             SourceFile = new SourceFile();
@@ -29,32 +18,25 @@ namespace GFAC
             Responders = new Responders();
             UniqueResponses = new UniqueResponses();
         }
-        public Session ExportSession(string filePath_Name)
+        public static Session ExportSession(string filePath_Name, Session session)
         {
             if (string.IsNullOrEmpty(filePath_Name))
                 return null;
 
-            FilePath = Path.GetDirectoryName(filePath_Name);
-            FileName = Path.GetFileName(filePath_Name);
+            string FilePath = Path.GetDirectoryName(filePath_Name);
+            string FileName = Path.GetFileName(filePath_Name);
 
-            bool SaveSuccesful = ExportData(this, FilePath, FileName);
-
-            if (SaveSuccesful)
-            {
-                this.LastSaved = DateTime.Now;
-                this.FilePath = FilePath;
-                this.FileName = FileName;
-            }
-
-            return this;
+            session =  ExportData(session, FilePath, FileName);
+            
+            return session;
         }
-        public Session ImportSession(string filePath_Name)
+        public static Session ImportSession(string filePath_Name)
         {
             if (string.IsNullOrEmpty(filePath_Name))
                 return null;
 
-            FilePath = Path.GetDirectoryName(filePath_Name);
-            FileName = Path.GetFileName(filePath_Name);
+            string FilePath = Path.GetDirectoryName(filePath_Name);
+            string FileName = Path.GetFileName(filePath_Name);
 
             try
             {

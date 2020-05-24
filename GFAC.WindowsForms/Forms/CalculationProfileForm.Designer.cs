@@ -40,7 +40,6 @@
             this.cboColumnType = new System.Windows.Forms.ComboBox();
             this.lblColumnType = new System.Windows.Forms.Label();
             this.lblCorrectResponses = new System.Windows.Forms.Label();
-            this.SetDefaultProfile = new System.Windows.Forms.Button();
             this.btnLoadProfile = new System.Windows.Forms.Button();
             this.btnSaveASProfile = new System.Windows.Forms.Button();
             this.btnSaveProfile = new System.Windows.Forms.Button();
@@ -169,17 +168,6 @@
             this.lblCorrectResponses.Size = new System.Drawing.Size(35, 13);
             this.lblCorrectResponses.TabIndex = 30;
             this.lblCorrectResponses.Text = "label1";
-            // 
-            // SetDefaultProfile
-            // 
-            this.SetDefaultProfile.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.SetDefaultProfile.Location = new System.Drawing.Point(15, 423);
-            this.SetDefaultProfile.Name = "SetDefaultProfile";
-            this.SetDefaultProfile.Size = new System.Drawing.Size(123, 23);
-            this.SetDefaultProfile.TabIndex = 31;
-            this.SetDefaultProfile.Text = "Set Default Profile";
-            this.SetDefaultProfile.UseVisualStyleBackColor = true;
-            this.SetDefaultProfile.Click += new System.EventHandler(this.SetDefaultProfile_Click);
             // 
             // btnLoadProfile
             // 
@@ -323,7 +311,6 @@
             this.Controls.Add(this.btnLoadProfile);
             this.Controls.Add(this.btnSaveASProfile);
             this.Controls.Add(this.btnSaveProfile);
-            this.Controls.Add(this.SetDefaultProfile);
             this.Controls.Add(this.lblCorrectResponses);
             this.Controls.Add(this.lblColumnType);
             this.Controls.Add(this.cboColumnType);
@@ -338,7 +325,6 @@
             this.Controls.Add(this.txtProfileName);
             this.Name = "CalculationProfileForm";
             this.Text = "CalculationProfileForm";
-            this.Load += new System.EventHandler(this.CalculationProfileForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,7 +344,6 @@
         private System.Windows.Forms.ComboBox cboColumnType;
         private System.Windows.Forms.Label lblColumnType;
         private System.Windows.Forms.Label lblCorrectResponses;
-        private System.Windows.Forms.Button SetDefaultProfile;
         private System.Windows.Forms.Button btnLoadProfile;
         private System.Windows.Forms.Button btnSaveASProfile;
         private System.Windows.Forms.Button btnSaveProfile;

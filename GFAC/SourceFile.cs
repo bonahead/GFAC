@@ -25,17 +25,6 @@ namespace GFAC
         }
         private bool ToUpper { get; set; }
         private bool TrimValue { get; set; }
-        public string FilePath_Name
-        {
-            get
-            {
-                if (string.IsNullOrEmpty(this.FilePath) ||
-                        string.IsNullOrEmpty(this.FileName))
-                    return string.Empty;
-                else
-                    return $"{this.FilePath}\\{this.FilePath_Name}";
-            }
-        }
         public Rows Rows { get; set; }
         public DataTable DataTable
         {

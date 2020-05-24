@@ -13,43 +13,25 @@ namespace GFAC
             Columns = new ProfileColumns();
             DefaultType = ColumnType.Score;
         }
-        public string FilePath_Name
-        {
-            get
-            {
-                if (string.IsNullOrEmpty(this.FilePath) ||
-                string.IsNullOrEmpty(this.FileName))
-                    return string.Empty;
-                else
-                    return $"{this.FilePath}\\{this.FileName}.prf";
-            }
-        }
-        public Profile ExportProfile(string filePath_Name)
+        public static Profile ExportProfile(string filePath_Name, Profile profile)
         {
             if (string.IsNullOrEmpty(filePath_Name))
                 return null;
 
-            FilePath = Path.GetDirectoryName(filePath_Name);
-            FileName = Path.GetFileName(filePath_Name);
+            string FilePath = Path.GetDirectoryName(filePath_Name);
+            string FileName = Path.GetFileName(filePath_Name);
 
-            bool SaveSuccesful = ExportData(this, FilePath, FileName);
+            profile = ExportData(profile, FilePath, FileName);
 
-            if (SaveSuccesful)
-            {
-                this.LastSaved = DateTime.Now;
-                this.FilePath = FilePath;
-                this.FileName = FileName;
-            }
-
-            return this;
+            return profile;
         }
-        public Profile ImportProfile(string filePath_Name)
+        public static Profile ImportProfile(string filePath_Name)
         {
             if (string.IsNullOrEmpty(filePath_Name))
                 return null;
 
-            FilePath = Path.GetDirectoryName(filePath_Name);
-            FileName = Path.GetFileName(filePath_Name);
+            string FilePath = Path.GetDirectoryName(filePath_Name);
+            string FileName = Path.GetFileName(filePath_Name);
 
             try
             {

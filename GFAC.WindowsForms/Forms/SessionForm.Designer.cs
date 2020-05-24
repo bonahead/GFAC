@@ -31,11 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SessionForm));
             this.SelectFile = new System.Windows.Forms.Button();
             this.lblImportFile = new System.Windows.Forms.Label();
-            this.ImportFile = new System.Windows.Forms.Button();
-            this.SetDefaultProfile = new System.Windows.Forms.Button();
+            this.btnImportFile = new System.Windows.Forms.Button();
             this.lblProfile = new System.Windows.Forms.Label();
-            this.GetProfiles = new System.Windows.Forms.Button();
-            this.SaveProfile = new System.Windows.Forms.Button();
             this.lblCalculationProfile = new System.Windows.Forms.Label();
             this.btnSelectProfile = new System.Windows.Forms.Button();
             this.lblInputFile = new System.Windows.Forms.Label();
@@ -76,38 +73,17 @@
             resources.ApplyResources(this.lblImportFile, "lblImportFile");
             this.lblImportFile.Name = "lblImportFile";
             // 
-            // ImportFile
+            // btnImportFile
             // 
-            resources.ApplyResources(this.ImportFile, "ImportFile");
-            this.ImportFile.Name = "ImportFile";
-            this.ImportFile.UseVisualStyleBackColor = true;
-            this.ImportFile.Click += new System.EventHandler(this.ImportFile_Click);
-            // 
-            // SetDefaultProfile
-            // 
-            resources.ApplyResources(this.SetDefaultProfile, "SetDefaultProfile");
-            this.SetDefaultProfile.Name = "SetDefaultProfile";
-            this.SetDefaultProfile.UseVisualStyleBackColor = true;
-            this.SetDefaultProfile.Click += new System.EventHandler(this.SetDefaultProfile_Click);
+            resources.ApplyResources(this.btnImportFile, "btnImportFile");
+            this.btnImportFile.Name = "btnImportFile";
+            this.btnImportFile.UseVisualStyleBackColor = true;
+            this.btnImportFile.Click += new System.EventHandler(this.btnImportFile_Click);
             // 
             // lblProfile
             // 
             resources.ApplyResources(this.lblProfile, "lblProfile");
             this.lblProfile.Name = "lblProfile";
-            // 
-            // GetProfiles
-            // 
-            resources.ApplyResources(this.GetProfiles, "GetProfiles");
-            this.GetProfiles.Name = "GetProfiles";
-            this.GetProfiles.UseVisualStyleBackColor = true;
-            this.GetProfiles.Click += new System.EventHandler(this.GetProfiles_Click);
-            // 
-            // SaveProfile
-            // 
-            resources.ApplyResources(this.SaveProfile, "SaveProfile");
-            this.SaveProfile.Name = "SaveProfile";
-            this.SaveProfile.UseVisualStyleBackColor = true;
-            this.SaveProfile.Click += new System.EventHandler(this.SaveProfile_Click);
             // 
             // lblCalculationProfile
             // 
@@ -151,7 +127,6 @@
             this.DataGridSource.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(this.DataGridSource, "DataGridSource");
             this.DataGridSource.Name = "DataGridSource";
-            this.DataGridSource.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridSource_CellContentClick);
             this.DataGridSource.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridSource_ColumnHeaderMouseDoubleClick);
             // 
             // tabResponses
@@ -259,14 +234,12 @@
             this.Controls.Add(this.lblInputFile);
             this.Controls.Add(this.btnSelectProfile);
             this.Controls.Add(this.lblCalculationProfile);
-            this.Controls.Add(this.SaveProfile);
-            this.Controls.Add(this.GetProfiles);
             this.Controls.Add(this.lblProfile);
-            this.Controls.Add(this.SetDefaultProfile);
-            this.Controls.Add(this.ImportFile);
+            this.Controls.Add(this.btnImportFile);
             this.Controls.Add(this.lblImportFile);
             this.Controls.Add(this.SelectFile);
             this.Name = "SessionForm";
+            this.Load += new System.EventHandler(this.SessionForm_Load);
             this.tabSource.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridSource)).EndInit();
             this.tabResponses.ResumeLayout(false);
@@ -283,11 +256,8 @@
 
         private System.Windows.Forms.Button SelectFile;
         private System.Windows.Forms.Label lblImportFile;
-        private System.Windows.Forms.Button ImportFile;
-        private System.Windows.Forms.Button SetDefaultProfile;
+        private System.Windows.Forms.Button btnImportFile;
         private System.Windows.Forms.Label lblProfile;
-        private System.Windows.Forms.Button GetProfiles;
-        private System.Windows.Forms.Button SaveProfile;
         private System.Windows.Forms.Label lblCalculationProfile;
         private System.Windows.Forms.Button btnSelectProfile;
         private System.Windows.Forms.Label lblInputFile;

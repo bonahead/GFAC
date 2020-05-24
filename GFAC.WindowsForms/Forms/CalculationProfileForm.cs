@@ -1,15 +1,9 @@
-﻿using GFAC.CalculationProfile.Handlers;
-using GFAC.CalculationProfile.Objects;
-using GFAC.Common;
+﻿using GFAC.Common;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static GFAC.Common.Enumerations;
 
@@ -18,7 +12,7 @@ namespace GFAC.WindowsForms.Forms
     public partial class CalculationProfileForm : Form
     {
         public static ResourceManager rm = new ResourceManager("GFAC.WindowsForms.Resources.Labels", typeof(SessionForm).Assembly);
-        public Profile _calculationProfile;
+        public Profile _profile;
         private int _columnsSelectedIndex =-1;
         public CalculationProfileForm()
         {
@@ -35,21 +29,16 @@ namespace GFAC.WindowsForms.Forms
             lblColumnScore.Text = $"{rm.GetString("lblColumnScore")}:";
             lblCorrectResponses.Text = $"{rm.GetString("lblCorrectResponses")}:";
         }
-        private void SetDefaultProfile_Click(object sender, EventArgs e)
-        {
-            _calculationProfile = Profile.GetDefault();
-            PopulateForm();
-        }
         private void PopulateForm()
         {
-            this.txtProfileName.Text = _calculationProfile.Name;
-            this.cboDefaultColumnType.Text = _calculationProfile.DefaultType.ToString();
+            this.txtProfileName.Text = _profile.Name;
+            this.cboDefaultColumnType.Text = _profile.DefaultType.ToString();
             PopulateColumnsList();
         }
         private void PopulateColumnsList()
         {
             _columnsSelectedIndex = -1;
-            lstColumns.DataSource = _calculationProfile.Columns.Select(c => c.Name).ToList();
+            lstColumns.DataSource = _profile.Columns.Select(c => c.Name).ToList();
             lstColumns.Refresh();
         }
         private void btnSaveProfile_Click(object sender, EventArgs e)
@@ -59,26 +48,25 @@ namespace GFAC.WindowsForms.Forms
         }
         private void UpdateProfile (bool removeFileInfo = false)
         {
-            if (_calculationProfile == null)
-                _calculationProfile = new Profile();
+            if (_profile == null)
+                _profile = new Profile();
 
-            _calculationProfile.Name = txtProfileName.Text;
-            _calculationProfile.DefaultType = GetColumnType(cboDefaultColumnType.Text);
+            _profile.Name = txtProfileName.Text;
+            _profile.DefaultType = GetColumnType(cboDefaultColumnType.Text);
 
             if (removeFileInfo)
             {
-                _calculationProfile.FileName = string.Empty;
-                _calculationProfile.FilePath = string.Empty;
+                _profile.FileName = string.Empty;
+                _profile.FilePath = string.Empty;
             }
         }
         private void SaveProfile()
         {
-            string filepath = string.IsNullOrEmpty(_calculationProfile.FilePath_Name) ?
+            string filepath = string.IsNullOrEmpty(_profile.FilePath_Name) ?
                 Functions.SelectFile(FileType.Profile, true) :
-                _calculationProfile.FilePath_Name;
+                _profile.FilePath_Name;
 
-            ProfileHandler ph = new ProfileHandler(filepath, _calculationProfile);
-            _calculationProfile = ph.ExportProfile();
+            _profile = Profile.ExportProfile(filepath, _profile);
         }
 
         private void btnSaveASProfile_Click(object sender, EventArgs e)
@@ -91,12 +79,11 @@ namespace GFAC.WindowsForms.Forms
         {
             string filepath = Functions.SelectFile(FileType.Profile, false);
 
-            ProfileHandler ph = new ProfileHandler(filepath);
-            Profile profile = ph.ImportProfile();
+            Profile profile = Profile.ImportProfile(filepath);
 
             if (profile != null)
             {
-                _calculationProfile = profile;
+                _profile = profile;
                 PopulateForm();
             }
             else
@@ -119,13 +106,13 @@ namespace GFAC.WindowsForms.Forms
         private ProfileColumn GetProfileColumn(int index)
         {
             ProfileColumn returnValue = null;
-            if (_calculationProfile == null)
+            if (_profile == null)
                 return returnValue;
 
-            if (_calculationProfile.Columns.Count <= index )
+            if (_profile.Columns.Count <= index )
                 return returnValue;
 
-            returnValue = _calculationProfile.Columns[index];
+            returnValue = _profile.Columns[index];
             return returnValue;
         }
         private void SaveColumnInfo()
@@ -144,9 +131,9 @@ namespace GFAC.WindowsForms.Forms
             profileColumn.CorrectResponses = GetCorrectResponses();
 
             if (newColumn)
-                _calculationProfile.Columns.Add(profileColumn);
+                _profile.Columns.Add(profileColumn);
             else
-                _calculationProfile.Columns[_columnsSelectedIndex] = profileColumn;
+                _profile.Columns[_columnsSelectedIndex] = profileColumn;
             
         }
         private void RemoveColumnInfo()
@@ -156,7 +143,7 @@ namespace GFAC.WindowsForms.Forms
                 ProfileColumn profileColumn = GetProfileColumn(index);
 
                 if (profileColumn != null)
-                    _calculationProfile.Columns.RemoveAt(index);
+                    _profile.Columns.RemoveAt(index);
 
                 _columnsSelectedIndex = -1;
             }
@@ -175,15 +162,15 @@ namespace GFAC.WindowsForms.Forms
                 index - 1 :
                 index + 1;
 
-            if (_calculationProfile.Columns.Count() < newIndex && newIndex > -1)
+            if (_profile.Columns.Count() < newIndex && newIndex > -1)
                 return;
             
             ProfileColumn oldProfileColumn = GetProfileColumn(index);
             ProfileColumn newProfileColumn = GetProfileColumn(newIndex);
                 
 
-            _calculationProfile.Columns[index] = newProfileColumn;
-            _calculationProfile.Columns[newIndex] = oldProfileColumn;          
+            _profile.Columns[index] = newProfileColumn;
+            _profile.Columns[newIndex] = oldProfileColumn;          
         }
         private List<string> GetCorrectResponses()
         {
@@ -260,10 +247,10 @@ namespace GFAC.WindowsForms.Forms
         private void btnColumnAdd_Click(object sender, EventArgs e)
         {
             ClearColumnInfo();
-            _columnsSelectedIndex = _calculationProfile.Columns.Count;
+            _columnsSelectedIndex = _profile.Columns.Count;
             SaveColumnInfo();
             PopulateColumnsList();
-            lstColumns.SelectedIndex = _calculationProfile.Columns.Count - 1;
+            lstColumns.SelectedIndex = _profile.Columns.Count - 1;
             _columnsSelectedIndex = lstColumns.SelectedIndex;
         }
 
@@ -284,11 +271,6 @@ namespace GFAC.WindowsForms.Forms
             }
 
             PopulateCorrectResponses(column.CorrectResponses);
-        }
-
-        private void CalculationProfileForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

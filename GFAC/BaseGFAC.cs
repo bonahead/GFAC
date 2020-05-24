@@ -10,6 +10,19 @@ namespace GFAC
     {
         public string FilePath { get; set; }
         public string FileName { get; set; }
+        public string FilePath_Name
+        {
+            get
+            {
+                string fileExtension = GetExtension(this.GetType());
+                if (string.IsNullOrEmpty(this.FilePath) ||
+                string.IsNullOrEmpty(this.FileName))
+                    return string.Empty;
+                else
+
+                    return $"{this.FilePath}\\{this.FileName}.osn";
+            }
+        }
         public DateTime? LastSaved { get; set; }
         internal static DataTable RowsToDataTable(ProfileColumns columns)
         {
@@ -69,15 +82,19 @@ namespace GFAC
             }
             return returnValue;
         }
-        internal static bool ExportData<T>(T exportData, string filePath, string fileName)
+        internal static T ExportData<T>(T exportData, string filePath, string fileName) where T : BaseGFAC
         {
-            bool returnValue = false;
+            T returnValue = null;
             string fileExtension = GetExtension(typeof(T));
             string newFileName = $"{filePath}\\{fileName}.{fileExtension}";
             string tempFileName = GetTempFileName(filePath, fileName, fileExtension);
 
             if (string.IsNullOrEmpty(tempFileName))
                 return returnValue;
+
+            exportData.LastSaved = DateTime.Now;
+            exportData.FilePath = filePath;
+            exportData.FileName = fileName;
 
             StreamWriter file = null;
             try
@@ -88,7 +105,7 @@ namespace GFAC
                 file.Close();
                 if (newFileName != tempFileName)
                     RenameExportedFile(tempFileName, newFileName, filePath, fileName, fileExtension);
-                returnValue = true;
+                returnValue = exportData;
             }
             catch (Exception e)
             {
@@ -133,6 +150,8 @@ namespace GFAC
                     return "prf";
                 case "OverallSession":
                     return "osn";
+                case "SourceFile":
+                    return "csv";
                 default:
                     return string.Empty;
             }
@@ -194,6 +213,5 @@ namespace GFAC
             }
             return returnValue;
         }
-
     }
 }
