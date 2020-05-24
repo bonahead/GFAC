@@ -1,56 +1,74 @@
-﻿using GFAC.CalculationProfile.Objects;
-using GFAC.CalulationSession.Objects;
-using GFAC.Common.Objects;
-using System;
-using System.CodeDom;
-using System.Collections.Generic;
+﻿using System;
+using System.Data;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace GFAC.Common.Handlers
+namespace GFAC
 {
-    internal class BaseFileHandler
+    public class BaseGFAC
     {
-        internal static T ImportData<T>(string filePath, string fileName) where T : BaseGFAC
+        public string FilePath { get; set; }
+        public string FileName { get; set; }
+        public DateTime? LastSaved { get; set; }
+        internal static DataTable RowsToDataTable(ProfileColumns columns)
         {
-            T returnValue = null;
-            StreamReader file = null;
-            string filePath_name = $"{filePath}\\{fileName}.{GetExtension(typeof(T))}";
+            DataTable returnValue = new DataTable();
+
+            Rows newRows = new Rows();
+            foreach (ProfileColumn pc in columns)
+            {
+                Row newRow = new Row();
+                newRow.Columns.Add(new Column()
+                {
+                    ColumnValue = pc.Name
+                });
+                newRow.Columns.Add(new Column()
+                {
+                    ColumnValue = pc.Type.ToString()
+                });
+                newRow.Columns.Add(new Column()
+                {
+                    ColumnValue = pc.Score.ToString()
+                });
+                newRows.Add(newRow);
+            }
             try
             {
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
-                file = new StreamReader(filePath_name);
-                returnValue = (T)xmlSerializer.Deserialize(file);
+                returnValue = RowsToDataTable(newRows);
             }
             catch
             {
-                returnValue = null;
-            }
-            finally
-            {
-                if (file != null)
-                    file.Close();
+                returnValue = new DataTable();
             }
             return returnValue;
         }
-
-        private static string GetExtension(Type t)
+        internal static DataTable RowsToDataTable(Rows rows)
         {
-            switch(t.Name)
+            DataTable returnValue = new DataTable();
+            bool firstRow = true;
+            foreach (Row row in rows)
             {
-                case "Session":
-                    return "ssn";
-                case "Profile":
-                    return "prf";
-                default:
-                    return string.Empty;
+                if (firstRow)
+                {
+                    foreach (Column column in row.Columns)
+                    {
+                        returnValue.Columns.Add(new DataColumn()
+                        {
+                            ColumnName = column.ColumnValue,
+                            DataType = typeof(string)
+                        });
+                    }
+                    firstRow = false;
+                }
+                else
+                {
+                    object[] newRow = row.Columns.Select(r => r.ColumnValue).ToArray();
+                    returnValue.Rows.Add(newRow);
+                }
             }
+            return returnValue;
         }
-
         internal static bool ExportData<T>(T exportData, string filePath, string fileName)
         {
             bool returnValue = false;
@@ -83,6 +101,42 @@ namespace GFAC.Common.Handlers
             }
             return returnValue;
         }
+        internal static T ImportData<T>(string filePath, string fileName) where T : BaseGFAC
+        {
+            T returnValue = null;
+            StreamReader file = null;
+            string filePath_name = $"{filePath}\\{fileName}.{GetExtension(typeof(T))}";
+            try
+            {
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
+                file = new StreamReader(filePath_name);
+                returnValue = (T)xmlSerializer.Deserialize(file);
+            }
+            catch
+            {
+                returnValue = null;
+            }
+            finally
+            {
+                if (file != null)
+                    file.Close();
+            }
+            return returnValue;
+        }
+        private static string GetExtension(Type t)
+        {
+            switch (t.Name)
+            {
+                case "Session":
+                    return "ssn";
+                case "Profile":
+                    return "prf";
+                case "OverallSession":
+                    return "osn";
+                default:
+                    return string.Empty;
+            }
+        }
         private static void RenameExportedFile(string tempFileName, string newFileName, string filePath, string fileName, string fileExtension)
         {
             if (string.IsNullOrEmpty(tempFileName) ||
@@ -94,7 +148,7 @@ namespace GFAC.Common.Handlers
             string newTempFileName = GetTempFileName(filePath, fileName, fileExtension);
             if (string.IsNullOrEmpty(newTempFileName))
                 throw new Exception("Temp Filename could not be determined");
-            
+
             try
             {
                 File.Copy(newFileName, newTempFileName);
@@ -102,15 +156,15 @@ namespace GFAC.Common.Handlers
                 File.Copy(tempFileName, newFileName);
                 File.Delete(tempFileName);
                 File.Delete(newTempFileName);
-            }   
-            catch(Exception e)
+            }
+            catch
             {
                 if (!File.Exists(newFileName))
                 {
                     if (File.Exists(newTempFileName))
                         File.Copy(newTempFileName, newFileName);
                 }
-                if (!File.Exists(tempFileName)) 
+                if (!File.Exists(tempFileName))
                     File.Delete(tempFileName);
                 if (!File.Exists(newTempFileName))
                     File.Delete(newTempFileName);
@@ -118,7 +172,7 @@ namespace GFAC.Common.Handlers
                 throw new Exception("Unable to save File");
             }
         }
-        private static string GetTempFileName(string filePath,string fileName, string fileExtension)
+        private static string GetTempFileName(string filePath, string fileName, string fileExtension)
         {
             string returnValue = string.Empty;
             int tryIndex = 0;
@@ -132,18 +186,14 @@ namespace GFAC.Common.Handlers
             else
             {
                 returnValue = $"{filePath}\\{fileName}{tryIndex.ToString()}.{fileExtension}";
-                while (CheckExists(returnValue))
+                while (File.Exists(returnValue))
                 {
                     tryIndex++;
                     returnValue = $"{filePath}\\{fileName}{tryIndex.ToString()}.{fileExtension}";
                 }
             }
             return returnValue;
-        } 
-
-        private static bool CheckExists(string fileName)
-        {
-            return File.Exists(fileName);
         }
+
     }
 }

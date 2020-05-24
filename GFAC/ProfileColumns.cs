@@ -1,12 +1,7 @@
-﻿using GFAC.Common.Objects;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace GFAC.CalculationProfile.Objects
+namespace GFAC
 {
     public class ProfileColumn : BaseGFAC
     {
@@ -19,9 +14,9 @@ namespace GFAC.CalculationProfile.Objects
         {
             CorrectResponses = new List<string>();
         }
-
     }
-    public class ProfileColumns : List<ProfileColumn>  {
+    public class ProfileColumns : List<ProfileColumn>
+    {
         public DataTable DataTable
         {
             get
@@ -31,10 +26,10 @@ namespace GFAC.CalculationProfile.Objects
         }
     }
     public enum ColumnType
-    {                 
+    {
         Report,
         Score,
-        None 
+        None
     }
 
 }

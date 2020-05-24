@@ -41,24 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\Handlers\BaseFileHandler.cs" />
-    <Compile Include="CalculationProfile\Handler\ProfileHandler.cs" />
-    <Compile Include="OverallSession\Handlers\OverallSessionHandler.cs" />
-    <Compile Include="Response\Handlers\ResponderHandler.cs" />
-    <Compile Include="CalulationSession\Handlers\SessionHandler.cs" />
-    <Compile Include="Source\Handlers\SourceFileHandler.cs" />
-    <Compile Include="UnqResponse\Handlers\UniqueResponseCollectionHandler.cs" />
-    <Compile Include="Common\Objects\BaseGFAC.cs" />
-    <Compile Include="OverallSession\Objects\OverallSession.cs" />
-    <Compile Include="CalculationProfile\Objects\Profile.cs" />
-    <Compile Include="Common\Objects\Column.cs" />
-    <Compile Include="CalulationSession\Objects\Session.cs" />
-    <Compile Include="CalculationProfile\Objects\ProfileColumns.cs" />
-    <Compile Include="Response\Objects\Responder.cs" />
-    <Compile Include="Common\Objects\Row.cs" />
-    <Compile Include="Source\Objects\SourceFile.cs" />
-    <Compile Include="UnqResponse\Objects\UniqueResponse.cs" />
-    <Compile Include="UnqResponse\Objects\UniqueResponseCollection.cs" />
+    <Compile Include="BaseGFAC.cs" />
+    <Compile Include="OverallSession.cs" />
+    <Compile Include="Profile.cs" />
+    <Compile Include="Column.cs" />
+    <Compile Include="Session.cs" />
+    <Compile Include="ProfileColumns.cs" />
+    <Compile Include="Responder.cs" />
+    <Compile Include="Row.cs" />
+    <Compile Include="SourceFile.cs" />
+    <Compile Include="UniqueResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

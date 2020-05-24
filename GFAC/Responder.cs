@@ -1,13 +1,8 @@
-﻿using GFAC.Common.Objects;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace GFAC.Response.Objects
+namespace GFAC
 {
     public class Responder
     {
@@ -16,8 +11,7 @@ namespace GFAC.Response.Objects
         public List<int> ResponseScore { get; set; }
         public int TotalScore
         {
-            get
-            { return ResponseScore.Sum(); }
+            get { return ResponseScore.Sum(); }
         }
         public Responder()
         {
@@ -28,6 +22,61 @@ namespace GFAC.Response.Objects
     }
     public class Responders : List<Responder>
     {
+        private SourceFile SourceFile { get; set; }
+        private Profile Profile { get; set; }
+        private UniqueResponseCollection UniqueResponseCollection { get; set; }
+        public Responders ProcessResponders(SourceFile sourceFile, Profile profile, UniqueResponseCollection uniqueResponseCollection)
+        {
+            if (sourceFile == null ||
+                    profile == null ||
+                    uniqueResponseCollection == null)
+                return null;
+
+            SourceFile = sourceFile;
+            Profile = profile;
+            UniqueResponseCollection = uniqueResponseCollection;
+            Responders returnValue = new Responders();
+
+            bool firstRow = true;
+            foreach (Row row in SourceFile.Rows)
+            {
+                if (firstRow)
+                    firstRow = false;
+                else
+                {
+                    Responder newResponder = new Responder();
+                    int colindex = 0;
+                    int respIndex = 0;
+                    ColumnType columnType;
+                    foreach (Column column in row.Columns)
+                    {
+                        columnType = Profile.Columns.Count + 1 > colindex ?
+                            Profile.Columns[colindex].Type :
+                            Profile.DefaultType;
+
+                        switch (columnType)
+                        {
+                            case ColumnType.Report:
+                                newResponder.ReportColumns.Add(column.ColumnValue);
+                                break;
+                            case ColumnType.Score:
+                                newResponder.ScoreColumns.Add(column.ColumnValue);
+                                int responseScore = uniqueResponseCollection.UniqueRepsonses[respIndex].Any(ur => ur.Response.Equals(column.ColumnValue) && ur.Correct) ?
+                                    Profile.Columns[colindex].Score :
+                                    0;
+                                newResponder.ResponseScore.Add(responseScore);
+                                respIndex++;
+                                break;
+                            default:
+                                break;
+                        }
+                        colindex++;
+                    }
+                    returnValue.Add(newResponder);
+                }
+            }
+            return returnValue;
+        }
         public DataTable DataTableResponses
         {
             get
@@ -64,24 +113,24 @@ namespace GFAC.Response.Objects
                 Rows rows = new Rows();
                 int colIndex = 1;
                 bool firstRow = true;
-                foreach(Responder responder in this)
+                foreach (Responder responder in this)
                 {
-                    if(firstRow)
+                    if (firstRow)
                     {
                         rows.Add(GetColumnHeaders(responder));
                         firstRow = false;
                     }
                     Columns newColumns = new Columns();
                     //Rank
-                    newColumns.Add(new Column() { ColumnValue = colIndex.ToString()});
-                    
+                    newColumns.Add(new Column() { ColumnValue = colIndex.ToString() });
+
                     //ReportColumms
                     responder.ReportColumns
-                       .ForEach(rc => newColumns.Add(new Column() { ColumnValue = rc}));
-                    
+                       .ForEach(rc => newColumns.Add(new Column() { ColumnValue = rc }));
+
                     //TotalScore
-                    newColumns.Add(new Column() { ColumnValue = responder.TotalScore.ToString()});
-                    
+                    newColumns.Add(new Column() { ColumnValue = responder.TotalScore.ToString() });
+
                     rows.Add(new Row() { Columns = newColumns });
                     colIndex++;
                 }
@@ -93,7 +142,7 @@ namespace GFAC.Response.Objects
                 int scorePrevious = 0;
                 rankedRows.Add(rows.FirstOrDefault());
                 rows.Remove(rows.FirstOrDefault());
-                foreach(Row row in rows.OrderByDescending(r => int.Parse(r.Columns[r.Columns.Count - 1].ColumnValue)))
+                foreach (Row row in rows.OrderByDescending(r => int.Parse(r.Columns[r.Columns.Count - 1].ColumnValue)))
                 {
                     if (int.Parse(row.Columns[row.Columns.Count - 1].ColumnValue) != scorePrevious)
                     {
@@ -126,17 +175,18 @@ namespace GFAC.Response.Objects
                        .ForEach(rc => newColumns.Add(new Column() { ColumnValue = string.Empty }));
 
             if (responses)
-            { 
+            {
                 //ReportColumns
                 responder.ScoreColumns
-                       .ForEach(rc => newColumns.Add(new Column() { ColumnValue = string.Empty }));}
+                       .ForEach(rc => newColumns.Add(new Column() { ColumnValue = string.Empty }));
+            }
             else
             {
                 //TotalScore
                 newColumns.Add(new Column() { ColumnValue = @"Score" });
             }
-            
-            returnValue= new Row() { Columns = newColumns };
+
+            returnValue = new Row() { Columns = newColumns };
             return returnValue;
         }
 
