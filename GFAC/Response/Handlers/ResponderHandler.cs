@@ -1,6 +1,5 @@
 ﻿using GFAC.CalculationProfile.Objects;
 using GFAC.Common.Objects;
-using GFAC.Objects;
 using GFAC.Response.Objects;
 using GFAC.Source.Objects;
 using GFAC.UnqResponse.Objects;

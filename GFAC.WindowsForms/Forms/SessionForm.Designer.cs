@@ -55,6 +55,7 @@
             this.btnLoadSession = new System.Windows.Forms.Button();
             this.btnProfileForm = new System.Windows.Forms.Button();
             this.txtProfile = new System.Windows.Forms.TextBox();
+            this.btnOverallSessionForm = new System.Windows.Forms.Button();
             this.tabSource.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridSource)).BeginInit();
             this.tabResponses.SuspendLayout();
@@ -233,10 +234,18 @@
             resources.ApplyResources(this.txtProfile, "txtProfile");
             this.txtProfile.Name = "txtProfile";
             // 
+            // btnOverallSessionForm
+            // 
+            resources.ApplyResources(this.btnOverallSessionForm, "btnOverallSessionForm");
+            this.btnOverallSessionForm.Name = "btnOverallSessionForm";
+            this.btnOverallSessionForm.UseVisualStyleBackColor = true;
+            this.btnOverallSessionForm.Click += new System.EventHandler(this.btnOverallSessionForm_Click);
+            // 
             // SessionForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnOverallSessionForm);
             this.Controls.Add(this.txtProfile);
             this.Controls.Add(this.btnProfileForm);
             this.Controls.Add(this.btnLoadSession);
@@ -298,5 +307,6 @@
         private System.Windows.Forms.Button btnLoadSession;
         private System.Windows.Forms.Button btnProfileForm;
         private System.Windows.Forms.TextBox txtProfile;
+        private System.Windows.Forms.Button btnOverallSessionForm;
     }
 }

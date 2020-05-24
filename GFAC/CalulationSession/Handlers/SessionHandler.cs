@@ -1,6 +1,5 @@
 ﻿using GFAC.CalulationSession.Objects;
 using GFAC.Common.Handlers;
-using GFAC.Objects;
 using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;

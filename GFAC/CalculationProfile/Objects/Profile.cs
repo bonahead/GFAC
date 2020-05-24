@@ -11,7 +11,7 @@ namespace GFAC.CalculationProfile.Objects
 {
     public class Profile : BaseGFAC
     {
-        public string ProfileName { get; set; }
+        public string Name { get; set; }
         public ProfileColumns Columns { get; set; }
         public ColumnType DefaultType { get; set; }
 
@@ -38,7 +38,7 @@ namespace GFAC.CalculationProfile.Objects
 
             returnValue = new Profile()
             {
-                ProfileName = "Default",
+                Name = "Default",
                 DefaultType = ColumnType.Score
             };
 

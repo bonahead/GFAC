@@ -42,7 +42,7 @@ namespace GFAC.WindowsForms.Forms
         }
         private void PopulateForm()
         {
-            this.txtProfileName.Text = _calculationProfile.ProfileName;
+            this.txtProfileName.Text = _calculationProfile.Name;
             this.cboDefaultColumnType.Text = _calculationProfile.DefaultType.ToString();
             PopulateColumnsList();
         }
@@ -62,7 +62,7 @@ namespace GFAC.WindowsForms.Forms
             if (_calculationProfile == null)
                 _calculationProfile = new Profile();
 
-            _calculationProfile.ProfileName = txtProfileName.Text;
+            _calculationProfile.Name = txtProfileName.Text;
             _calculationProfile.DefaultType = GetColumnType(cboDefaultColumnType.Text);
 
             if (removeFileInfo)
@@ -102,7 +102,6 @@ namespace GFAC.WindowsForms.Forms
             else
                 MessageBox.Show("unable to load Session");
         }
-
         private void lstColumns_SelectedIndexChanged(object sender, EventArgs e)
         {
             int selectedIndex = lstColumns.SelectedIndex;

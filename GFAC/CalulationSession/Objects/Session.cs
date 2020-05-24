@@ -1,6 +1,5 @@
 ﻿using GFAC.CalculationProfile.Objects;
 using GFAC.Common.Objects;
-using GFAC.Objects;
 using GFAC.Source.Objects;
 using System;
 using System.Collections.Generic;
@@ -12,7 +11,7 @@ namespace GFAC.CalulationSession.Objects
 {
     public class Session : BaseGFAC
     {
-        public string SessionName { get; set; }
+        public string Name { get; set; }
         public SourceFile SourceFile { get; set; }
         public Profile CalculationProfile { set; get; }
         public string FilePath_Name
@@ -27,4 +26,6 @@ namespace GFAC.CalulationSession.Objects
             }
         }
     }
+    public class Sessions : List<Session> { }
 }
+

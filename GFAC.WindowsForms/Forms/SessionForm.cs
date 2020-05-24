@@ -215,7 +215,7 @@ namespace GFAC
             
             //_session.CalculationProfile = _calculationProfiles[cboCalculationProfiles.SelectedIndex];
             _session.SourceFile = _sourceFile;
-            _session.SessionName = txtSessionName.Text;
+            _session.Name = txtSessionName.Text;
 
             if(removeFileInfo)
             {
@@ -251,7 +251,7 @@ namespace GFAC
         private void PopulateForm()
         {
             //Todo Not all form is populated
-            this.txtSessionName.Text = _session.SessionName;
+            this.txtSessionName.Text = _session.Name;
             this.txtInputFile.Text = _session.SourceFile != null ? 
                 _session.SourceFile.FileName :
                 string.Empty;
@@ -262,6 +262,10 @@ namespace GFAC
             f.Show();
         }
 
-        
+        private void btnOverallSessionForm_Click(object sender, EventArgs e)
+        {
+            OverallSessionForm f = new OverallSessionForm();
+            f.Show();
+        }
     }
 }

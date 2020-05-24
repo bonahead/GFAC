@@ -1,7 +1,6 @@
 ﻿using GFAC.CalculationProfile.Objects;
 using GFAC.CalulationSession.Objects;
 using GFAC.Common.Objects;
-using GFAC.Objects;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;

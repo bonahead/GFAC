@@ -141,7 +141,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SelectFile.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="lblImportFile.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -165,7 +165,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblImportFile.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="ImportFile.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 144</value>
@@ -189,7 +189,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ImportFile.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="SetDefaultProfile.Location" type="System.Drawing.Point, System.Drawing">
     <value>411, 507</value>
@@ -213,7 +213,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SetDefaultProfile.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="lblProfile.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -237,7 +237,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblProfile.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="GetProfiles.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 507</value>
@@ -261,7 +261,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GetProfiles.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="SaveProfile.Location" type="System.Drawing.Point, System.Drawing">
     <value>153, 507</value>
@@ -285,7 +285,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SaveProfile.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="lblCalculationProfile.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -312,7 +312,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblCalculationProfile.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="btnSelectProfile.Location" type="System.Drawing.Point, System.Drawing">
     <value>646, 54</value>
@@ -336,7 +336,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnSelectProfile.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="lblInputFile.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -367,7 +367,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblInputFile.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="btnSelectFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -394,7 +394,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnSelectFile.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="txtInputFile.Location" type="System.Drawing.Point, System.Drawing">
     <value>128, 98</value>
@@ -415,7 +415,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtInputFile.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
+  </data>
+  <data name="DataGridSource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="DataGridSource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>826, 302</value>
+  </data>
+  <data name="DataGridSource.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;DataGridSource.Name" xml:space="preserve">
     <value>DataGridSource</value>
@@ -456,26 +465,14 @@
   <data name="&gt;&gt;tabSource.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="DataGridSource.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="dataGridResponses.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="DataGridSource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>826, 302</value>
+  <data name="dataGridResponses.Size" type="System.Drawing.Size, System.Drawing">
+    <value>823, 297</value>
   </data>
-  <data name="DataGridSource.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;DataGridSource.Name" xml:space="preserve">
-    <value>DataGridSource</value>
-  </data>
-  <data name="&gt;&gt;DataGridSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataGridSource.Parent" xml:space="preserve">
-    <value>tabSource</value>
-  </data>
-  <data name="&gt;&gt;DataGridSource.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="dataGridResponses.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;dataGridResponses.Name" xml:space="preserve">
     <value>dataGridResponses</value>
@@ -516,26 +513,14 @@
   <data name="&gt;&gt;tabResponses.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="dataGridResponses.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+  <data name="dataGridFinalScore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, -1</value>
   </data>
-  <data name="dataGridResponses.Size" type="System.Drawing.Size, System.Drawing">
-    <value>823, 297</value>
+  <data name="dataGridFinalScore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>826, 302</value>
   </data>
-  <data name="dataGridResponses.TabIndex" type="System.Int32, mscorlib">
+  <data name="dataGridFinalScore.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;dataGridResponses.Name" xml:space="preserve">
-    <value>dataGridResponses</value>
-  </data>
-  <data name="&gt;&gt;dataGridResponses.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridResponses.Parent" xml:space="preserve">
-    <value>tabResponses</value>
-  </data>
-  <data name="&gt;&gt;dataGridResponses.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;dataGridFinalScore.Name" xml:space="preserve">
     <value>dataGridFinalScore</value>
@@ -576,27 +561,6 @@
   <data name="&gt;&gt;tabFinalScore.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="dataGridFinalScore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, -1</value>
-  </data>
-  <data name="dataGridFinalScore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>826, 302</value>
-  </data>
-  <data name="dataGridFinalScore.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;dataGridFinalScore.Name" xml:space="preserve">
-    <value>dataGridFinalScore</value>
-  </data>
-  <data name="&gt;&gt;dataGridFinalScore.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridFinalScore.Parent" xml:space="preserve">
-    <value>tabFinalScore</value>
-  </data>
-  <data name="&gt;&gt;dataGridFinalScore.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="tabsProcess.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 174</value>
   </data>
@@ -616,7 +580,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tabsProcess.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="txtSessionName.Location" type="System.Drawing.Point, System.Drawing">
     <value>128, 12</value>
@@ -637,7 +601,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtSessionName.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="lblSessionName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -667,7 +631,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblSessionName.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="btnSaveSession.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -694,7 +658,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnSaveSession.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnSaveASSession.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -721,7 +685,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnSaveASSession.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnLoadSession.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -748,13 +712,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnLoadSession.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnProfileForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnProfileForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>586, 507</value>
+    <value>555, 507</value>
   </data>
   <data name="btnProfileForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 23</value>
@@ -775,7 +739,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnProfileForm.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="txtProfile.Location" type="System.Drawing.Point, System.Drawing">
     <value>128, 58</value>
@@ -796,6 +760,33 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtProfile.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnOverallSessionForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnOverallSessionForm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>690, 507</value>
+  </data>
+  <data name="btnOverallSessionForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 23</value>
+  </data>
+  <data name="btnOverallSessionForm.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="btnOverallSessionForm.Text" xml:space="preserve">
+    <value>Go To Overall Session Form</value>
+  </data>
+  <data name="&gt;&gt;btnOverallSessionForm.Name" xml:space="preserve">
+    <value>btnOverallSessionForm</value>
+  </data>
+  <data name="&gt;&gt;btnOverallSessionForm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOverallSessionForm.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnOverallSessionForm.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

@@ -1,6 +1,5 @@
 ﻿using GFAC.CalculationProfile.Objects;
 using GFAC.Common.Handlers;
-using GFAC.Objects;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -84,7 +83,7 @@ namespace GFAC.CalculationProfile.Handlers
         }
         public List<string> GetProfiles()
         {
-            return _Profiles.OrderBy(cp => cp.ProfileName).Select(cp => cp.ProfileName).ToList();
+            return _Profiles.OrderBy(cp => cp.Name).Select(cp => cp.Name).ToList();
         }
         public Profiles ImportProfiles()
         {
