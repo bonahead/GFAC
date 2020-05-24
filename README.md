@@ -20,4 +20,6 @@ Overall Session
 An Overall Session combines Session files to make an overall ranking using a selection of files.
 
 # The Program 
-The program is developed using C# class Library. The previousy mentioned entities are divided over folders to hopefully understandable chunks of code. There is small, simple and, at the moment, incomplete Windows Forms Front End as an example how to use the program in real life.
+The program is developed using C# class Library. There will be a small and simple windows forms frontend in the near future.
+
+Feel free to review the code, review the goal and contribute to make this a helpful tool.
