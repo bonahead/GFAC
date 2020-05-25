@@ -52,6 +52,7 @@
             this.btnCorrectResponseAdd = new System.Windows.Forms.Button();
             this.btnCorrectResponseRemove = new System.Windows.Forms.Button();
             this.txtAddCorrectResponses = new System.Windows.Forms.TextBox();
+            this.btnDefault = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtProfileName
@@ -294,11 +295,23 @@
             this.txtAddCorrectResponses.Size = new System.Drawing.Size(199, 143);
             this.txtAddCorrectResponses.TabIndex = 45;
             // 
+            // btnDefault
+            // 
+            this.btnDefault.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnDefault.Location = new System.Drawing.Point(678, 101);
+            this.btnDefault.Name = "btnDefault";
+            this.btnDefault.Size = new System.Drawing.Size(123, 23);
+            this.btnDefault.TabIndex = 46;
+            this.btnDefault.Text = "GetDefault";
+            this.btnDefault.UseVisualStyleBackColor = true;
+            this.btnDefault.Click += new System.EventHandler(this.btnDefault_Click);
+            // 
             // CalculationProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 454);
+            this.Controls.Add(this.btnDefault);
             this.Controls.Add(this.txtAddCorrectResponses);
             this.Controls.Add(this.btnCorrectResponseAdd);
             this.Controls.Add(this.btnCorrectResponseRemove);
@@ -356,5 +369,6 @@
         private System.Windows.Forms.Button btnCorrectResponseAdd;
         private System.Windows.Forms.Button btnCorrectResponseRemove;
         private System.Windows.Forms.TextBox txtAddCorrectResponses;
+        private System.Windows.Forms.Button btnDefault;
     }
 }

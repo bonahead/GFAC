@@ -47,6 +47,11 @@ namespace GFAC
             {
                 _session.Profile = Profile.ImportProfile(txtProfile.Text);
             }
+            if (!string.IsNullOrEmpty(txtProfile.Text) &&
+                    !string.IsNullOrEmpty(txtInputFile.Text))
+            {
+                ImportFile();
+            }
         }
         private void btnImportFile_Click(object sender, EventArgs e)
         {
@@ -199,6 +204,9 @@ namespace GFAC
             this.txtSessionName.Text = _session.Name;
             this.txtInputFile.Text = _session.SourceFile != null ? 
                 _session.SourceFile.FileName :
+                string.Empty;
+            this.txtProfile.Text = _session.Profile != null ?
+                _session.Profile.FileName : 
                 string.Empty;
         }
         private void btnProfileForm_Click(object sender, EventArgs e)

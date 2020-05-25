@@ -42,6 +42,7 @@
             this.btnSaveOverallSession = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblOverallSessionName = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFinalScore)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,6 +114,7 @@
             this.btnSelectFile.TabIndex = 45;
             this.btnSelectFile.Text = "Select Session";
             this.btnSelectFile.UseVisualStyleBackColor = true;
+            this.btnSelectFile.Click += new System.EventHandler(this.btnSelectFile_Click);
             // 
             // lblSessionFile
             // 
@@ -183,11 +185,23 @@
             this.lblOverallSessionName.TabIndex = 51;
             this.lblOverallSessionName.Text = "label1";
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnRefresh.Location = new System.Drawing.Point(1097, 120);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(140, 23);
+            this.btnRefresh.TabIndex = 53;
+            this.btnRefresh.Text = "refresh Overall Session";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // OverallSessionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1385, 450);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblOverallSessionName);
             this.Controls.Add(this.btnLoadOverallSession);
@@ -226,5 +240,6 @@
         private System.Windows.Forms.Button btnSaveOverallSession;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblOverallSessionName;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

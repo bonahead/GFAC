@@ -11,13 +11,14 @@ namespace GFAC.WindowsForms.Forms
     public partial class OverallSessionForm : Form
     {
         public static ResourceManager rm = new ResourceManager("GFAC.WindowsForms.Resources.Labels", typeof(SessionForm).Assembly);
-        public OverallSession _overallSession;
+        public OverallSession _overallSession = new OverallSession();
         private int _columnsSelectedIndex = -1;
 
         public OverallSessionForm()
         {
             InitializeComponent();
             SetFormLabels();
+            _overallSession = new OverallSession();
         }
 
         private void SetFormLabels()
@@ -103,7 +104,7 @@ namespace GFAC.WindowsForms.Forms
         private void btnColumnAdd_Click(object sender, EventArgs e)
         {
             ClearSession();
-            _columnsSelectedIndex = _overallSession.Sessions.Count;
+            _columnsSelectedIndex =  _overallSession.Sessions.Count;
             SaveSession();
             PopulateSessionsList();
             lstSessions.SelectedIndex = _overallSession.Sessions.Count - 1;
@@ -116,6 +117,9 @@ namespace GFAC.WindowsForms.Forms
         }
         private void SaveSession()
         {
+            if (_overallSession == null)
+                _overallSession = new OverallSession();
+
             bool newColumn = true;
             Session session = GetSession(_columnsSelectedIndex);
 
@@ -183,6 +187,89 @@ namespace GFAC.WindowsForms.Forms
         {
             this.txtName.Text = _overallSession.Name;
             PopulateSessionsList();
+        }
+
+        private void btnSelectFile_Click(object sender, EventArgs e)
+        {
+            txtSessionFile.Text = Functions.SelectFile(FileType.Session);
+            if (!string.IsNullOrEmpty(txtSessionFile.Text))
+            {
+                Session session = Session.ImportSession(txtSessionFile.Text);
+                _overallSession.Sessions.Add(session);
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            Sessions newSessions = new Sessions();
+            foreach(Session sess in _overallSession.Sessions)
+            {
+                Session newSession = sess;
+
+                if (sess == null)
+                    return;
+
+                if (sess.Profile == null)
+                    return;
+
+                sess.SourceFile = GetSourceFile(sess.SourceFile.FileName);
+
+                UniqueResponseCollection urc = new UniqueResponseCollection();
+                if (sess.SourceFile != null)
+                    urc = GetUniqueResponses(sess);
+
+                if (sess.SourceFile != null &&
+                    sess.UniqueResponses != null)
+                    sess.Responders = GetResponders(sess, urc);
+                newSessions.Add(newSession);
+            }
+            _overallSession.Sessions = newSessions;
+
+            Rows r = _overallSession.TotalScore();
+            PopulateFinalScore();   
+
+        }
+        private void PopulateFinalScore()
+        {
+            dataGridFinalScore.DataSource = _overallSession.DataTableFinalScore();
+            dataGridFinalScore.AutoResizeColumns();
+            dataGridFinalScore.Refresh();
+        }
+        private SourceFile GetSourceFile(string sourceFileName)
+        {
+            SourceFile returnValue = new SourceFile();
+            try
+            {
+                SourceFile sourceFile = new SourceFile(sourceFileName);
+                returnValue = sourceFile.Import();
+            }
+            catch { }
+            return returnValue;
+        }
+        private Responders GetResponders(Session sess, UniqueResponseCollection urc)
+        {
+            Responders returnValue = new Responders();
+            try
+            {
+                Responders responders = new Responders();
+                returnValue = responders.ProcessResponders(sess, urc);
+            }
+            catch { }
+
+            return returnValue;
+        }
+
+        private UniqueResponseCollection GetUniqueResponses(Session sess)
+        {
+            UniqueResponseCollection returnValue = new UniqueResponseCollection();
+            try
+            {
+                UniqueResponseCollection uniqueResponseCollection = new UniqueResponseCollection();
+                returnValue = uniqueResponseCollection.CollectUniqueResponses(sess);
+            }
+            catch { }
+
+            return returnValue;
         }
     }
 }

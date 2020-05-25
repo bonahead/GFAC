@@ -24,7 +24,7 @@ namespace GFAC
                 return null;
 
             string FilePath = Path.GetDirectoryName(filePath_Name);
-            string FileName = Path.GetFileName(filePath_Name);
+            string FileName = Path.GetFileNameWithoutExtension(filePath_Name);
 
             session =  ExportData(session, FilePath, FileName);
             
@@ -36,7 +36,7 @@ namespace GFAC
                 return null;
 
             string FilePath = Path.GetDirectoryName(filePath_Name);
-            string FileName = Path.GetFileName(filePath_Name);
+            string FileName = Path.GetFileNameWithoutExtension(filePath_Name);
 
             try
             {

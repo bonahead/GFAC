@@ -272,5 +272,11 @@ namespace GFAC.WindowsForms.Forms
 
             PopulateCorrectResponses(column.CorrectResponses);
         }
+
+        private void btnDefault_Click(object sender, EventArgs e)
+        {
+            _profile = Profile.GetDefault();
+            PopulateForm();
+        }
     }
 }

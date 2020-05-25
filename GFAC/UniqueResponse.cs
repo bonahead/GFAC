@@ -63,7 +63,7 @@ namespace GFAC
                             returnValue.UniqueRepsonses[respIndex].Add(new UniqueResponse()
                             {
                                 Response = column.ColumnValue,
-                                Correct = false
+                                Correct = true
                             });
                         }
                     }

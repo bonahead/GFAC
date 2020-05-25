@@ -16,8 +16,9 @@ namespace GFAC
         {
             if (!string.IsNullOrEmpty(filePath_Name))
             {
-                FilePath = Path.GetDirectoryName(filePath_Name);
-                FileName = Path.GetFileName(filePath_Name);
+                FileName = filePath_Name;
+                //FilePath = Path.GetDirectoryName(filePath_Name);
+                //FileName = Path.GetFileNameWithoutExtension(filePath_Name);
             }
 
             ToUpper = toUpper;
@@ -41,8 +42,8 @@ namespace GFAC
             try
             {
                 returnValue = new SourceFile();
-                returnValue.FileName = FilePath_Name;
-                using (StreamReader fileContents = new StreamReader(FilePath_Name))
+                returnValue.FileName = FileName;
+                using (StreamReader fileContents = new StreamReader(FileName))
                 {
                     while (!fileContents.EndOfStream)
                     {
@@ -68,10 +69,10 @@ namespace GFAC
         private bool FileIsValid()
         {
             bool returnValue = false;
-            if (string.IsNullOrEmpty(FilePath_Name))
+            if (string.IsNullOrEmpty(FileName))
                 return returnValue;
 
-            returnValue = File.Exists(FilePath_Name);
+            returnValue = File.Exists(FileName);
             return returnValue;
         }
         private string ConvertValue(string value)
