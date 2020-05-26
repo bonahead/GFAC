@@ -35,6 +35,64 @@ namespace GFAC.WindowsForms.Forms
             }
         }
         #region Buttons
+        private void btnColumnAdd_Click(object sender, EventArgs e)
+        {
+            AddColumn();
+            ClearColumnInfo();
+            PopulateColumnsList();
+            lstColumns.SelectedIndex = _profile.Columns.Count - 1;
+        }
+        private void btnColumnMoveDown_Click(object sender, EventArgs e)
+        {
+            int index = lstColumns.SelectedIndex;
+            MoveColumnInfo(index, false);
+
+            PopulateColumnsList();
+            lstColumns.SelectedIndex = index + 1;
+        }
+        private void btnColumnMoveUp_Click(object sender, EventArgs e)
+        {
+            int index = lstColumns.SelectedIndex;
+            MoveColumnInfo(index);
+
+            PopulateColumnsList();
+            lstColumns.SelectedIndex = index - 1;
+        }
+        private void btnColumnRemove_Click(object sender, EventArgs e)
+        {
+            int index = lstColumns.SelectedIndex;
+            RemoveColumnInfo();
+
+            PopulateColumnsList();
+            lstColumns.SelectedIndex = -1;
+        }
+        private void btnCorrectResponseAdd_Click(object sender, EventArgs e)
+        {
+            using (CorrectResponsesForm crf = new CorrectResponsesForm())
+            {
+                DialogResult result = crf.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    string[] correctResponses = crf.ReturnValue
+                                                .Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                    foreach (string cr in correctResponses)
+                    {
+                        if (!string.IsNullOrEmpty(cr))
+                            if (!_profile.Columns[_PreviousSelectedColumnIndex].CorrectResponses.Contains(cr))
+                                _profile.Columns[_PreviousSelectedColumnIndex].CorrectResponses.Add(cr);
+                    }
+                }
+            }
+            PopulateCorrectResponses(_profile.Columns[_PreviousSelectedColumnIndex].CorrectResponses);
+        }
+        private void btnCorrectResponseRemove_Click(object sender, EventArgs e)
+        {
+            foreach (int index in lstCorrectResponses.SelectedIndices.Cast<int>().AsEnumerable().Reverse())
+            {
+                _profile.Columns[_PreviousSelectedColumnIndex].CorrectResponses.RemoveAt(index);
+            }
+            PopulateCorrectResponses(_profile.Columns[_PreviousSelectedColumnIndex].CorrectResponses);
+        }
         #endregion
         #region Private Methods
         #endregion
@@ -115,16 +173,16 @@ namespace GFAC.WindowsForms.Forms
             {
                 SaveColumnInfo(_PreviousSelectedColumnIndex);
                 PopulateColumnsList();
-                _PreviousSelectedColumnIndex = selectedIndex;
-                lstColumns.SelectedIndex = selectedIndex;
             }
 
             if (selectedIndex > -1)
             {
                 PopulateColumnInfo(selectedIndex);
             }
+
+            _PreviousSelectedColumnIndex = selectedIndex;
+            lstColumns.SelectedIndex = selectedIndex;
         }
-        #endregion
         private ProfileColumn GetProfileColumn(int index)
         {
             ProfileColumn returnValue = null;
@@ -137,7 +195,6 @@ namespace GFAC.WindowsForms.Forms
             returnValue = _profile.Columns[index];
             return returnValue;
         }
-        
         private void RemoveColumnInfo()
         {
             foreach (int index in lstColumns.SelectedIndices.Cast<int>().AsEnumerable().Reverse())
@@ -172,17 +229,6 @@ namespace GFAC.WindowsForms.Forms
             _profile.Columns[index] = newProfileColumn;
             _profile.Columns[newIndex] = oldProfileColumn;
         }
-        private List<string> GetCorrectResponses()
-        {
-            List<string> returnValue = new List<string>();
-            List<string> initialList = new List<string>();
-            foreach (string value in lstCorrectResponses.Items)
-            {
-                initialList.Add(value.ToUpper());
-            }
-            returnValue = initialList.Distinct().ToList();
-            return returnValue;
-        }
         private ColumnType GetColumnType(object selectedItem)
         {
             switch (selectedItem.ToString())
@@ -214,65 +260,17 @@ namespace GFAC.WindowsForms.Forms
         }
         private void PopulateCorrectResponses(List<string> correctResponses)
         {
-            lstCorrectResponses.DataSource = correctResponses;
-            lstCorrectResponses.Invalidate();
-        }
-
-        private void btnColumnMoveDown_Click(object sender, EventArgs e)
-        {
-            int index = lstColumns.SelectedIndex;
-            MoveColumnInfo(index, false);
-
-            PopulateColumnsList();
-            lstColumns.SelectedIndex = index + 1;
-        }
-
-        private void btnColumnMoveUp_Click(object sender, EventArgs e)
-        {
-            int index = lstColumns.SelectedIndex;
-            MoveColumnInfo(index);
-
-            PopulateColumnsList();
-            lstColumns.SelectedIndex = index - 1;
-        }
-
-        private void btnColumnRemove_Click(object sender, EventArgs e)
-        {
-            int index = lstColumns.SelectedIndex;
-            RemoveColumnInfo();
-
-            PopulateColumnsList();
-            lstColumns.SelectedIndex = -1;
-        }
-
-        private void btnColumnAdd_Click(object sender, EventArgs e)
-        {
-            AddColumn();
-            ClearColumnInfo();
-            PopulateColumnsList();
-            lstColumns.SelectedIndex = _profile.Columns.Count - 1;
+            lstCorrectResponses.Items.Clear();
+            foreach (string value in correctResponses.OrderBy(cr => cr).ToList())
+            {
+                lstCorrectResponses.Items.Add(value);
+            }
+            lstCorrectResponses.Refresh();
         }
         private void AddColumn()
         {
             _profile.Columns.Add(new ProfileColumn() { Name = "New Column" });
         }
-        //private void btnCorrectResponseAdd_Click(object sender, EventArgs e)
-        //{
-        //    if (string.IsNullOrEmpty(txtAddCorrectResponses.Text))
-        //        return;
-
-        //    ProfileColumn column = GetProfileColumn(lstColumns.SelectedIndex);
-        //    List<string> newCorrectResponses =
-        //        txtAddCorrectResponses.Text
-        //        .Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
-
-        //    foreach (string newCR in newCorrectResponses)
-        //    {
-        //        if (!column.CorrectResponses.Contains(newCR.Trim().ToUpper()))
-        //            column.CorrectResponses.Add(newCR.Trim().ToUpper());
-        //    }
-
-        //    PopulateCorrectResponses(column.CorrectResponses);
-        //}
+        #endregion
     }
 }

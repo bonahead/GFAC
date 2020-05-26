@@ -240,6 +240,7 @@
             this.btnCorrectResponseAdd.TabIndex = 44;
             this.btnCorrectResponseAdd.Text = "Add Response(s)";
             this.btnCorrectResponseAdd.UseVisualStyleBackColor = true;
+            this.btnCorrectResponseAdd.Click += new System.EventHandler(this.btnCorrectResponseAdd_Click);
             // 
             // btnCorrectResponseRemove
             // 
@@ -250,6 +251,7 @@
             this.btnCorrectResponseRemove.TabIndex = 43;
             this.btnCorrectResponseRemove.Text = "Delete Response";
             this.btnCorrectResponseRemove.UseVisualStyleBackColor = true;
+            this.btnCorrectResponseRemove.Click += new System.EventHandler(this.btnCorrectResponseRemove_Click);
             // 
             // grpWithSelected
             // 

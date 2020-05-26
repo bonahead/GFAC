@@ -49,6 +49,12 @@
     <Compile Include="Common\Constants.cs" />
     <Compile Include="Common\Enumerations.cs" />
     <Compile Include="Common\Functions.cs" />
+    <Compile Include="Forms\CorrectResponsesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CorrectResponsesForm.Designer.cs">
+      <DependentUpon>CorrectResponsesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\GFACForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\CorrectResponsesForm.resx">
+      <DependentUpon>CorrectResponsesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProfileForm.resx">
       <DependentUpon>ProfileForm.cs</DependentUpon>
     </EmbeddedResource>
