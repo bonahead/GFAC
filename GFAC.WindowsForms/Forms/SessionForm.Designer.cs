@@ -1,4 +1,4 @@
-﻿namespace GFAC
+﻿namespace GFAC.WindowsForms.Forms
 {
     partial class SessionForm
     {
@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SessionForm));
-            this.SelectFile = new System.Windows.Forms.Button();
             this.lblImportFile = new System.Windows.Forms.Label();
-            this.btnImportFile = new System.Windows.Forms.Button();
             this.lblProfile = new System.Windows.Forms.Label();
             this.lblCalculationProfile = new System.Windows.Forms.Label();
             this.btnSelectProfile = new System.Windows.Forms.Button();
@@ -45,14 +43,10 @@
             this.tabFinalScore = new System.Windows.Forms.TabPage();
             this.dataGridFinalScore = new System.Windows.Forms.DataGridView();
             this.tabsProcess = new System.Windows.Forms.TabControl();
-            this.txtSessionName = new System.Windows.Forms.TextBox();
-            this.lblSessionName = new System.Windows.Forms.Label();
-            this.btnSaveSession = new System.Windows.Forms.Button();
-            this.btnSaveASSession = new System.Windows.Forms.Button();
-            this.btnLoadSession = new System.Windows.Forms.Button();
-            this.btnProfileForm = new System.Windows.Forms.Button();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.txtProfile = new System.Windows.Forms.TextBox();
-            this.btnOverallSessionForm = new System.Windows.Forms.Button();
+            this.lblOverallSessionName = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.tabSource.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridSource)).BeginInit();
             this.tabResponses.SuspendLayout();
@@ -62,23 +56,10 @@
             this.tabsProcess.SuspendLayout();
             this.SuspendLayout();
             // 
-            // SelectFile
-            // 
-            resources.ApplyResources(this.SelectFile, "SelectFile");
-            this.SelectFile.Name = "SelectFile";
-            this.SelectFile.UseVisualStyleBackColor = true;
-            // 
             // lblImportFile
             // 
             resources.ApplyResources(this.lblImportFile, "lblImportFile");
             this.lblImportFile.Name = "lblImportFile";
-            // 
-            // btnImportFile
-            // 
-            resources.ApplyResources(this.btnImportFile, "btnImportFile");
-            this.btnImportFile.Name = "btnImportFile";
-            this.btnImportFile.UseVisualStyleBackColor = true;
-            this.btnImportFile.Click += new System.EventHandler(this.btnImportFile_Click);
             // 
             // lblProfile
             // 
@@ -166,68 +147,36 @@
             this.tabsProcess.Name = "tabsProcess";
             this.tabsProcess.SelectedIndex = 0;
             // 
-            // txtSessionName
+            // txtName
             // 
-            resources.ApplyResources(this.txtSessionName, "txtSessionName");
-            this.txtSessionName.Name = "txtSessionName";
-            // 
-            // lblSessionName
-            // 
-            resources.ApplyResources(this.lblSessionName, "lblSessionName");
-            this.lblSessionName.Name = "lblSessionName";
-            // 
-            // btnSaveSession
-            // 
-            resources.ApplyResources(this.btnSaveSession, "btnSaveSession");
-            this.btnSaveSession.Name = "btnSaveSession";
-            this.btnSaveSession.UseVisualStyleBackColor = true;
-            this.btnSaveSession.Click += new System.EventHandler(this.btnSaveSession_Click);
-            // 
-            // btnSaveASSession
-            // 
-            resources.ApplyResources(this.btnSaveASSession, "btnSaveASSession");
-            this.btnSaveASSession.Name = "btnSaveASSession";
-            this.btnSaveASSession.UseVisualStyleBackColor = true;
-            this.btnSaveASSession.Click += new System.EventHandler(this.btnSaveASSession_Click);
-            // 
-            // btnLoadSession
-            // 
-            resources.ApplyResources(this.btnLoadSession, "btnLoadSession");
-            this.btnLoadSession.Name = "btnLoadSession";
-            this.btnLoadSession.UseVisualStyleBackColor = true;
-            this.btnLoadSession.Click += new System.EventHandler(this.btnLoadSession_Click);
-            // 
-            // btnProfileForm
-            // 
-            resources.ApplyResources(this.btnProfileForm, "btnProfileForm");
-            this.btnProfileForm.Name = "btnProfileForm";
-            this.btnProfileForm.UseVisualStyleBackColor = true;
-            this.btnProfileForm.Click += new System.EventHandler(this.btnProfileForm_Click);
+            resources.ApplyResources(this.txtName, "txtName");
+            this.txtName.Name = "txtName";
             // 
             // txtProfile
             // 
             resources.ApplyResources(this.txtProfile, "txtProfile");
             this.txtProfile.Name = "txtProfile";
             // 
-            // btnOverallSessionForm
+            // lblOverallSessionName
             // 
-            resources.ApplyResources(this.btnOverallSessionForm, "btnOverallSessionForm");
-            this.btnOverallSessionForm.Name = "btnOverallSessionForm";
-            this.btnOverallSessionForm.UseVisualStyleBackColor = true;
-            this.btnOverallSessionForm.Click += new System.EventHandler(this.btnOverallSessionForm_Click);
+            resources.ApplyResources(this.lblOverallSessionName, "lblOverallSessionName");
+            this.lblOverallSessionName.Name = "lblOverallSessionName";
+            // 
+            // btnRefresh
+            // 
+            resources.ApplyResources(this.btnRefresh, "btnRefresh");
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // SessionForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnOverallSessionForm);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.lblOverallSessionName);
             this.Controls.Add(this.txtProfile);
-            this.Controls.Add(this.btnProfileForm);
-            this.Controls.Add(this.btnLoadSession);
-            this.Controls.Add(this.btnSaveASSession);
-            this.Controls.Add(this.btnSaveSession);
-            this.Controls.Add(this.txtSessionName);
-            this.Controls.Add(this.lblSessionName);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.tabsProcess);
             this.Controls.Add(this.txtInputFile);
             this.Controls.Add(this.btnSelectFile);
@@ -235,11 +184,8 @@
             this.Controls.Add(this.btnSelectProfile);
             this.Controls.Add(this.lblCalculationProfile);
             this.Controls.Add(this.lblProfile);
-            this.Controls.Add(this.btnImportFile);
             this.Controls.Add(this.lblImportFile);
-            this.Controls.Add(this.SelectFile);
             this.Name = "SessionForm";
-            this.Load += new System.EventHandler(this.SessionForm_Load);
             this.tabSource.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridSource)).EndInit();
             this.tabResponses.ResumeLayout(false);
@@ -253,10 +199,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button SelectFile;
         private System.Windows.Forms.Label lblImportFile;
-        private System.Windows.Forms.Button btnImportFile;
         private System.Windows.Forms.Label lblProfile;
         private System.Windows.Forms.Label lblCalculationProfile;
         private System.Windows.Forms.Button btnSelectProfile;
@@ -270,13 +213,9 @@
         private System.Windows.Forms.TabPage tabFinalScore;
         private System.Windows.Forms.DataGridView dataGridFinalScore;
         private System.Windows.Forms.TabControl tabsProcess;
-        private System.Windows.Forms.TextBox txtSessionName;
-        private System.Windows.Forms.Label lblSessionName;
-        private System.Windows.Forms.Button btnSaveSession;
-        private System.Windows.Forms.Button btnSaveASSession;
-        private System.Windows.Forms.Button btnLoadSession;
-        private System.Windows.Forms.Button btnProfileForm;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtProfile;
-        private System.Windows.Forms.Button btnOverallSessionForm;
+        private System.Windows.Forms.Label lblOverallSessionName;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

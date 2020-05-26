@@ -49,11 +49,20 @@
     <Compile Include="Common\Constants.cs" />
     <Compile Include="Common\Enumerations.cs" />
     <Compile Include="Common\Functions.cs" />
-    <Compile Include="Forms\CalculationProfileForm.cs">
+    <Compile Include="Forms\GFACForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CalculationProfileForm.Designer.cs">
-      <DependentUpon>CalculationProfileForm.cs</DependentUpon>
+    <Compile Include="Forms\ProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProfileForm.Designer.cs">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GFACMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GFACMain.Designer.cs">
+      <DependentUpon>GFACMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\OverallSessionForm.cs">
       <SubType>Form</SubType>
@@ -69,51 +78,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\Labels.Designer.cs">
-      <DependentUpon>Labels.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Resources\Labels.en-EN.Designer.cs">
-      <DependentUpon>Labels.en-EN.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Resources\Labels.nl-NL.Designer.cs">
-      <DependentUpon>Labels.nl-NL.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="Forms\CalculationProfileForm.resx">
-      <DependentUpon>CalculationProfileForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ProfileForm.resx">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GFACMain.resx">
+      <DependentUpon>GFACMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OverallSessionForm.resx">
       <DependentUpon>OverallSessionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SessionForm.resx">
       <DependentUpon>SessionForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Resources\Labels.en-EN.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Labels.en-EN.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Labels.nl-NL.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Labels.nl-NL.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Labels.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Labels.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <None Include="Files\Afgelaste Evenementen.csv" />
+    <None Include="Files\Afgelaste Evenementen.osn" />
+    <None Include="Files\Default Profile.prf" />
+    <None Include="Files\Round 1 Session.ssn" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

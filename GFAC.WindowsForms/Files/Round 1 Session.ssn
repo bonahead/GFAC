@@ -1,0 +1,1241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Session xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FilePath>E:\paolo\Dev\temp\Files\GFAC ExampleFiles</FilePath>
+  <FileName>Round 1 Session</FileName>
+  <LastSaved>2020-05-25T14:10:21.565857+02:00</LastSaved>
+  <Name>Ronde 1</Name>
+  <SourceFile>
+    <FileName>E:\paolo\Dev\temp\Files\GFAC ExampleFiles\Afgelaste Evenementen.csv</FileName>
+    <LastSaved xsi:nil="true" />
+    <_separator>44</_separator>
+    <Rows>
+      <Row>
+        <Columns>
+          <Column>
+            <ColumnValue>TIMESTAMP</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>NAAM</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 1: ARTIEST</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 1: TITEL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 1: EVENEMENT</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 2: ARTIEST</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 2: TITEL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 2: EVENEMENT</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 3: ARTIEST</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 3: TITEL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 3: EVENEMENT</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 4: ARTIEST</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 4: TITEL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 4: EVENEMENT</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 5: ARTIEST</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 5: TITEL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 5: EVENEMENT</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 6: ARTIEST</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 6: TITEL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 6: EVENEMENT</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 7: ARTIEST</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 7: TITEL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 7: EVENEMENT</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 8: ARTIEST</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 8: TITEL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 8: EVENEMENT</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 9: ARTIEST</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 9: TITEL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 9: EVENEMENT</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 10: ARTIEST</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 10: TITEL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FRAGMENT 10: EVENEMENT</ColumnValue>
+          </Column>
+        </Columns>
+      </Row>
+      <Row>
+        <Columns>
+          <Column>
+            <ColumnValue>2020/05/03 7:31:59 PM GMT+2</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GOEDE ANTWOORDEN</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>YELLO</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>THE RACE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FORMULE 1 GRAND PRIX ZANDVOORT</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>DUNCAN LAURENCE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>LOVE DON'T HATE IT</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>EUROVISIE SONGFESTIVAL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GUNS N ROSES</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>DON'T CRY</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>PINKPOP</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>THE PROCLAIMERS</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>I'M GONNA BE (500 MILES)</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>4 DAAGSE NIJMEGEN</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>DE RAGGENDE MANNE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>NAAR VORE!</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>UEFA EURO 2020</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>KING BEE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BACK BY DOPE DEMAND</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>KONINGSDAG</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>HERMAN EMMINK</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>TULPEN UIT AMSTERDAM</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>KEUKENHOF</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BONEY M</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>MA BAKER</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>POP IN DE KOP</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GERARD JOLING</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>MAAK ME GEK</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GAY PRIDE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GEORGE MICHAEL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FREEDOM</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BEVRIJDINGSFESTIVAL</ColumnValue>
+          </Column>
+        </Columns>
+      </Row>
+      <Row>
+        <Columns>
+          <Column>
+            <ColumnValue>2020/05/08 11:48:02 PM GMT+2</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>DAVE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>YELLOW</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>THE RACE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FORMULE 1 GRAND PRIX ZANDVOORT</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>DUNCAN LAURENCE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>LOVE DONT HATE IT</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>EUROVISIE SONGFESTIVAL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GUNS N ROSES</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>DON'T YOU CRY</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>PINKPOP</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>PROCLAIMERS</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>I;M GONNA BE 500 MILES</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>4 DAAGSE NIJMEGEN</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>RAGGENDE MANNUH</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>NAAR VORE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>UEFA EURO 2020</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>KING BEE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BAK BY DOPE DEMAND</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>KONINGSDAG</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BONEY  M</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>SUNNY</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>POP IN DE KOP</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BONEY M</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>SUNNY</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>POP IN DE KOP</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GERARD JOLING</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>MAAK ME GEK</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GAY PRIDE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GEORGE MICHAEL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FREEDOM</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BEVRIJDINGSFESTIVAL</ColumnValue>
+          </Column>
+        </Columns>
+      </Row>
+      <Row>
+        <Columns>
+          <Column>
+            <ColumnValue>2020/05/08 11:48:07 PM GMT+2</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>PATRICK</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>YELLO</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>THE RACE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FORMULE 1 GRAND PRIX ZANDVOORT</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>DUNCAN LAURENCE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>LOVE DON'T HATE IT</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>EUROVISIE SONGFESTIVAL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GUNS N' ROSES</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>DON'T CRY</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>PINKPOP</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>PROCLAIMERS</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>I'M GONNA BE (500 MILES)</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>4 DAAGSE NIJMEGEN</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>RAGGENDE MANNE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>TRAP DE BAL NAAR VOREN</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>UEFA EURO 2020</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>KING BEE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BACK BY DOPE DEMAND</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>KONINGSDAG</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GERT EN HERMIEN</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>TULPEN UIT AMSTERDAM</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>KEUKENHOF</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BONEY M</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>MA BAKER</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>POP IN DE KOP</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GERARD JOLING</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>MAAK ME GEK</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GAY PRIDE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GEORGE MICHAEL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FREEDOM</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BEVRIJDINGSFESTIVAL</ColumnValue>
+          </Column>
+        </Columns>
+      </Row>
+      <Row>
+        <Columns>
+          <Column>
+            <ColumnValue>2020/05/08 11:48:16 PM GMT+2</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>WOP</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>YELLOW</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>THE RACE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FORMULE 1 GRAND PRIX ZANDVOORT</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>DUNCAN LAURENCE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>LOVE DON'T HATE IT</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>EUROVISIE SONGFESTIVAL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GUNS EN ROSES</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>DON'T CRY</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>PINKPOP</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>THE PROCLAIMERS</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>500 MILES</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>4 DAAGSE NIJMEGEN</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>RAGGENDE MANNE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>NAAR VORE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>UEFA EURO 2020</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>KING BEE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BACK BY DOPE DEMAND</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>KONINGSDAG</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>HERMAN EMMINK</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>TULPEN UIT AMSTERDAM</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>KEUKENHOF</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BONEY M</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>MA BAKER</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>POP IN DE KOP</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GERARD JOLING</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>MAAK ME GEK</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GAY PRIDE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GEORGE MICHEAL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FREEDOM</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BEVRIJDINGSFESTIVAL</ColumnValue>
+          </Column>
+        </Columns>
+      </Row>
+      <Row>
+        <Columns>
+          <Column>
+            <ColumnValue>2020/05/08 11:48:26 PM GMT+2</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>SIMON</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>YELLO</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>THE RACE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FORMULE 1 GRAND PRIX ZANDVOORT</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue />
+          </Column>
+          <Column>
+            <ColumnValue>ITS NOT COMPLICATED</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>EUROVISIE SONGFESTIVAL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GUNS AND ROSES</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>WHOS GONNA CRY TONIGHT</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>PINKPOP</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>THE PROCLAIMERS</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>500 MILES</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>4 DAAGSE NIJMEGEN</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue />
+          </Column>
+          <Column>
+            <ColumnValue>DROP THE BALL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>POP IN DE KOP</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>ERIK B</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BACK BY DOPE DEMAND</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GAY PRIDE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>HERMAN VAN VUREN</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BLUMEN</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>KEUKENHOF</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BONEY M</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>RASPUTIN</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>EUROVISIE SONGFESTIVAL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>NO IDEA</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue />
+          </Column>
+          <Column>
+            <ColumnValue>UEFA EURO 2020</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GEORGE MICHAEL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue />
+          </Column>
+          <Column>
+            <ColumnValue>GAY PRIDE</ColumnValue>
+          </Column>
+        </Columns>
+      </Row>
+      <Row>
+        <Columns>
+          <Column>
+            <ColumnValue>2020/05/08 11:48:27 PM GMT+2</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>STEPHAN</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue />
+          </Column>
+          <Column>
+            <ColumnValue>F1</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FORMULE 1 GRAND PRIX ZANDVOORT</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>DUNCAN LAURENCE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>LOVE DON'T HATE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>EUROVISIE SONGFESTIVAL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GUNS &amp; ROSES</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>DON'T YOU CRY TONIGHT</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue />
+          </Column>
+          <Column>
+            <ColumnValue>PROCLAIMERS</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>500 MILES</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>4 DAAGSE NIJMEGEN</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue />
+          </Column>
+          <Column>
+            <ColumnValue>NAAR VOREN</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>UEFA EURO 2020</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>KING BEE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BACK BY DOPE DEMAND</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue />
+          </Column>
+          <Column>
+            <ColumnValue />
+          </Column>
+          <Column>
+            <ColumnValue />
+          </Column>
+          <Column>
+            <ColumnValue>KEUKENHOF</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BONEY M</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>DADDY COOL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>POP IN DE KOP</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GERARD JOLING</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>MAAK ME GEK</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GAY PRIDE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GEORGE MICHAEL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue />
+          </Column>
+          <Column>
+            <ColumnValue>GAY PRIDE</ColumnValue>
+          </Column>
+        </Columns>
+      </Row>
+      <Row>
+        <Columns>
+          <Column>
+            <ColumnValue>2020/05/08 11:48:28 PM GMT+2</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>PETER</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>YELLOW</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>THE RACE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FORMULE 1 GRAND PRIX ZANDVOORT</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>DUNCAN LAURENCE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>HAVE IT ALL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>EUROVISIE SONGFESTIVAL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GUNS 'N ROSES</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>DON'T CRY</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>PINKPOP</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>PROCLAIMERS</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>500 MILES I'M GONNA BE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>4 DAAGSE NIJMEGEN</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BOB FOSKO</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>NAAR VOREN ....</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>UEFA EURO 2020</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>KING BEE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BACK BY DOPE DEMAND</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>KEUKENHOF</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue />
+          </Column>
+          <Column>
+            <ColumnValue>ANTJE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BEVRIJDINGSFESTIVAL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BONEY M</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>MA BAKER</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>POP IN DE KOP</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GERARD JOLIG</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>MAAK ME GEK</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GAY PRIDE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GEORGE MICHAEL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FREEDOM</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BEVRIJDINGSFESTIVAL</ColumnValue>
+          </Column>
+        </Columns>
+      </Row>
+      <Row>
+        <Columns>
+          <Column>
+            <ColumnValue>2020/05/08 11:48:39 PM GMT+2</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>JOHN</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>YELLO</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>THE RACE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>FORMULE 1 GRAND PRIX ZANDVOORT</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>JEANGOO MACAROOY</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GROW</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>EUROVISIE SONGFESTIVAL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GUNS N’ ROSES</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>DON’T CRY</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BEVRIJDINGSFESTIVAL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>PROCLAIMERS</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>500 MILES</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>4 DAAGSE NIJMEGEN</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>RAGGENDE MANNE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>NAAR VORUH</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>UEFA EURO 2020</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>KING BEE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BACK BY DOPE DEMAND</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>PINKPOP</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GEEN IDEE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>OP RODE ROZEN</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>KEUKENHOF</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>MA BAKER</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>BONEY M</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>POP IN DE KOP</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GERARD JOLING</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>MAAK ME GEK</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GAY PRIDE</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue>GEORGE MICHEAL</ColumnValue>
+          </Column>
+          <Column>
+            <ColumnValue />
+          </Column>
+          <Column>
+            <ColumnValue>BEVRIJDINGSFESTIVAL</ColumnValue>
+          </Column>
+        </Columns>
+      </Row>
+    </Rows>
+  </SourceFile>
+  <Profile>
+    <FilePath>E:\paolo\Dev\temp\Files\GFAC ExampleFiles</FilePath>
+    <FileName>Default Profile</FileName>
+    <LastSaved>2020-05-25T13:03:25.3125347+02:00</LastSaved>
+    <Name>Default</Name>
+    <Columns>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>TimeStamp</Name>
+        <Type>None</Type>
+        <Order>0</Order>
+        <Score>0</Score>
+        <CorrectResponses />
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Naam</Name>
+        <Type>Report</Type>
+        <Order>1</Order>
+        <Score>0</Score>
+        <CorrectResponses />
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 1: Artiest</Name>
+        <Type>Score</Type>
+        <Order>2</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>YELLO</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 1: Titel</Name>
+        <Type>Score</Type>
+        <Order>3</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>THE RACE</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 1: Evenement</Name>
+        <Type>Score</Type>
+        <Order>4</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>FORMULE 1 GRAND PRIX ZANDVOORT</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 2: Artiest</Name>
+        <Type>Score</Type>
+        <Order>5</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>YELLO</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 2: Titel</Name>
+        <Type>Score</Type>
+        <Order>6</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>THE RACE</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 2: Evenement</Name>
+        <Type>Score</Type>
+        <Order>7</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>FORMULE 1 GRAND PRIX ZANDVOORT</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 3: Artiest</Name>
+        <Type>Score</Type>
+        <Order>8</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>YELLO</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 3: Titel</Name>
+        <Type>Score</Type>
+        <Order>9</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>THE RACE</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 3: Evenement</Name>
+        <Type>Score</Type>
+        <Order>10</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>FORMULE 1 GRAND PRIX ZANDVOORT</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 4: Artiest</Name>
+        <Type>Score</Type>
+        <Order>11</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>YELLO</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 4: Titel</Name>
+        <Type>Score</Type>
+        <Order>12</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>THE RACE</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 4: Evenement</Name>
+        <Type>Score</Type>
+        <Order>13</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>FORMULE 1 GRAND PRIX ZANDVOORT</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 5: Artiest</Name>
+        <Type>Score</Type>
+        <Order>14</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>YELLO</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 5: Titel</Name>
+        <Type>Score</Type>
+        <Order>15</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>THE RACE</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 5: Evenement</Name>
+        <Type>Score</Type>
+        <Order>16</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>FORMULE 1 GRAND PRIX ZANDVOORT</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 6: Artiest</Name>
+        <Type>Score</Type>
+        <Order>17</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>YELLO</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 6: Titel</Name>
+        <Type>Score</Type>
+        <Order>18</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>THE RACE</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 6: Evenement</Name>
+        <Type>Score</Type>
+        <Order>19</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>FORMULE 1 GRAND PRIX ZANDVOORT</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 7: Artiest</Name>
+        <Type>Score</Type>
+        <Order>20</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>YELLO</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 7: Titel</Name>
+        <Type>Score</Type>
+        <Order>21</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>THE RACE</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 7: Evenement</Name>
+        <Type>Score</Type>
+        <Order>22</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>FORMULE 1 GRAND PRIX ZANDVOORT</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 8: Artiest</Name>
+        <Type>Score</Type>
+        <Order>23</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>YELLO</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 8: Titel</Name>
+        <Type>Score</Type>
+        <Order>24</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>THE RACE</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 8: Evenement</Name>
+        <Type>Score</Type>
+        <Order>25</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>FORMULE 1 GRAND PRIX ZANDVOORT</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 9: Artiest</Name>
+        <Type>Score</Type>
+        <Order>26</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>YELLO</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 9: Titel</Name>
+        <Type>Score</Type>
+        <Order>27</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>THE RACE</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 9: Evenement</Name>
+        <Type>Score</Type>
+        <Order>28</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>FORMULE 1 GRAND PRIX ZANDVOORT</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 10: Artiest</Name>
+        <Type>Score</Type>
+        <Order>29</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>YELLO</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 10: Titel</Name>
+        <Type>Score</Type>
+        <Order>30</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>THE RACE</string>
+        </CorrectResponses>
+      </ProfileColumn>
+      <ProfileColumn>
+        <LastSaved xsi:nil="true" />
+        <Name>Fragment 10: Evenement</Name>
+        <Type>Score</Type>
+        <Order>31</Order>
+        <Score>1</Score>
+        <CorrectResponses>
+          <string>FORMULE 1 GRAND PRIX ZANDVOORT</string>
+        </CorrectResponses>
+      </ProfileColumn>
+    </Columns>
+    <DefaultType>Score</DefaultType>
+  </Profile>
+  <Responders />
+  <UniqueResponses />
+</Session>

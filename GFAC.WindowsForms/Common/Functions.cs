@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using static GFAC.Common.Enumerations;
 
 namespace GFAC.Common
@@ -26,14 +21,15 @@ namespace GFAC.Common
                 fileDialog.Filter = fileType.Value;
                 fileDialog.RestoreDirectory = true;
 
-                if(fileDialog.ShowDialog() == DialogResult.OK)
+                if (fileDialog.ShowDialog() == DialogResult.OK)
                 {
                     returnValue = fileDialog.FileName;
                 }
                 fileDialog = null;
             }
-            catch { 
-            //TODO
+            catch
+            {
+                //TODO
             }
             return returnValue;
         }

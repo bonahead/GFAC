@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FilePath>E:\paolo\Dev\temp\Files\GFAC ExampleFiles</FilePath>
+  <FileName>Default Profile</FileName>
+  <LastSaved>2020-05-25T13:03:25.3125347+02:00</LastSaved>
+  <Name>Default</Name>
+  <Columns>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>TimeStamp</Name>
+      <Type>None</Type>
+      <Order>0</Order>
+      <Score>0</Score>
+      <CorrectResponses />
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Naam</Name>
+      <Type>Report</Type>
+      <Order>1</Order>
+      <Score>0</Score>
+      <CorrectResponses />
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 1: Artiest</Name>
+      <Type>Score</Type>
+      <Order>2</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>YELLO</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 1: Titel</Name>
+      <Type>Score</Type>
+      <Order>3</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>THE RACE</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 1: Evenement</Name>
+      <Type>Score</Type>
+      <Order>4</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>FORMULE 1 GRAND PRIX ZANDVOORT</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 2: Artiest</Name>
+      <Type>Score</Type>
+      <Order>5</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>YELLO</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 2: Titel</Name>
+      <Type>Score</Type>
+      <Order>6</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>THE RACE</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 2: Evenement</Name>
+      <Type>Score</Type>
+      <Order>7</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>FORMULE 1 GRAND PRIX ZANDVOORT</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 3: Artiest</Name>
+      <Type>Score</Type>
+      <Order>8</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>YELLO</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 3: Titel</Name>
+      <Type>Score</Type>
+      <Order>9</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>THE RACE</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 3: Evenement</Name>
+      <Type>Score</Type>
+      <Order>10</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>FORMULE 1 GRAND PRIX ZANDVOORT</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 4: Artiest</Name>
+      <Type>Score</Type>
+      <Order>11</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>YELLO</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 4: Titel</Name>
+      <Type>Score</Type>
+      <Order>12</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>THE RACE</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 4: Evenement</Name>
+      <Type>Score</Type>
+      <Order>13</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>FORMULE 1 GRAND PRIX ZANDVOORT</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 5: Artiest</Name>
+      <Type>Score</Type>
+      <Order>14</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>YELLO</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 5: Titel</Name>
+      <Type>Score</Type>
+      <Order>15</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>THE RACE</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 5: Evenement</Name>
+      <Type>Score</Type>
+      <Order>16</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>FORMULE 1 GRAND PRIX ZANDVOORT</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 6: Artiest</Name>
+      <Type>Score</Type>
+      <Order>17</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>YELLO</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 6: Titel</Name>
+      <Type>Score</Type>
+      <Order>18</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>THE RACE</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 6: Evenement</Name>
+      <Type>Score</Type>
+      <Order>19</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>FORMULE 1 GRAND PRIX ZANDVOORT</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 7: Artiest</Name>
+      <Type>Score</Type>
+      <Order>20</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>YELLO</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 7: Titel</Name>
+      <Type>Score</Type>
+      <Order>21</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>THE RACE</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 7: Evenement</Name>
+      <Type>Score</Type>
+      <Order>22</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>FORMULE 1 GRAND PRIX ZANDVOORT</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 8: Artiest</Name>
+      <Type>Score</Type>
+      <Order>23</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>YELLO</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 8: Titel</Name>
+      <Type>Score</Type>
+      <Order>24</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>THE RACE</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 8: Evenement</Name>
+      <Type>Score</Type>
+      <Order>25</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>FORMULE 1 GRAND PRIX ZANDVOORT</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 9: Artiest</Name>
+      <Type>Score</Type>
+      <Order>26</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>YELLO</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 9: Titel</Name>
+      <Type>Score</Type>
+      <Order>27</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>THE RACE</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 9: Evenement</Name>
+      <Type>Score</Type>
+      <Order>28</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>FORMULE 1 GRAND PRIX ZANDVOORT</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 10: Artiest</Name>
+      <Type>Score</Type>
+      <Order>29</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>YELLO</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 10: Titel</Name>
+      <Type>Score</Type>
+      <Order>30</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>THE RACE</string>
+      </CorrectResponses>
+    </ProfileColumn>
+    <ProfileColumn>
+      <LastSaved xsi:nil="true" />
+      <Name>Fragment 10: Evenement</Name>
+      <Type>Score</Type>
+      <Order>31</Order>
+      <Score>1</Score>
+      <CorrectResponses>
+        <string>FORMULE 1 GRAND PRIX ZANDVOORT</string>
+      </CorrectResponses>
+    </ProfileColumn>
+  </Columns>
+  <DefaultType>Score</DefaultType>
+</Profile>

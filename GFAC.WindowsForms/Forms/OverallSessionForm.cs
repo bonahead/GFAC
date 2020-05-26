@@ -2,49 +2,122 @@
 using System;
 using System.Data;
 using System.Linq;
-using System.Resources;
 using System.Windows.Forms;
 using static GFAC.Common.Enumerations;
 
 namespace GFAC.WindowsForms.Forms
 {
-    public partial class OverallSessionForm : Form
+    public partial class OverallSessionForm : GFACForm
     {
-        public static ResourceManager rm = new ResourceManager("GFAC.WindowsForms.Resources.Labels", typeof(SessionForm).Assembly);
         public OverallSession _overallSession = new OverallSession();
-        private int _columnsSelectedIndex = -1;
 
         public OverallSessionForm()
         {
             InitializeComponent();
-            SetFormLabels();
             _overallSession = new OverallSession();
         }
-
-        private void SetFormLabels()
+        public OverallSessionForm(string filepath)
         {
-            lblOverallSessionName.Text = $"{rm.GetString("lblOverallSessionName")}:";
-            lblSessionFile.Text = $"{rm.GetString("lblSessionFile")}:";
+            InitializeComponent();
+            OverallSession overallSession = OverallSession.ImportOverallSession(filepath);
+
+            if (overallSession != null)
+            {
+                _overallSession = overallSession;
+                PopulateForm();
+            }
+            else
+            {
+                MessageBox.Show(Messages.OverallSession_UnableToLoad, Captions.OverallSession_Load, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
         }
-        private void btnColumnMoveUp_Click(object sender, EventArgs e)
+        #region Buttons
+        private void btnSessionAdd_Click(object sender, EventArgs e)
+        {
+            int currentSelectedIndex = lstSessions.SelectedIndex;
+            string sessionFile = Functions.SelectFile(FileType.Session);
+            if (!string.IsNullOrEmpty(sessionFile))
+            {
+                Session session = Session.ImportSession(sessionFile);
+                if (session != null)
+                {
+                    AddSession(session);
+                }
+                else
+                    MessageBox.Show(Messages.Session_UnableToLoad, Captions.Session_Load, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void AddSession(Session session)
+        {
+            if (lstSessions.Items.Contains(session.Name))
+            {
+                MessageBox.Show(Messages.Session_UniqueName, Captions.Session_Load, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                _overallSession.Sessions.Add(session);
+                PopulateSessionsList();
+                lstSessions.SelectedIndex = lstSessions.Items.Count - 1;
+            }
+        }
+        private void btnSessionMoveUp_Click(object sender, EventArgs e)
         {
             int index = lstSessions.SelectedIndex;
-            if (index > -1)
-                MoveSession(index);
+            MoveSession(index);
 
             PopulateSessionsList();
             lstSessions.SelectedIndex = index - 1;
         }
-
-        private void btnColumnMoveDown_Click(object sender, EventArgs e)
+        private void btnSessionMoveDown_Click(object sender, EventArgs e)
         {
             int index = lstSessions.SelectedIndex;
-            if (index > -1)
-                MoveSession(index, false);
+            MoveSession(index, false);
 
             PopulateSessionsList();
             lstSessions.SelectedIndex = index + 1;
         }
+        private void btnSessionRemove_Click(object sender, EventArgs e)
+        {
+            int index = lstSessions.SelectedIndex;
+            RemoveSession();
+
+            PopulateSessionsList();
+            lstSessions.SelectedIndex = -1;
+        }
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            Sessions newSessions = new Sessions();
+            foreach (Session sess in _overallSession.Sessions)
+            {
+                Session newSession = sess;
+
+                if (sess == null)
+                    return;
+
+                if (sess.Profile == null)
+                    return;
+
+                sess.SourceFile = GetSourceFile(sess.SourceFile.FileName);
+
+                UniqueResponseCollection urc = new UniqueResponseCollection();
+                if (sess.SourceFile != null)
+                    urc = GetUniqueResponses(sess);
+
+                if (sess.SourceFile != null &&
+                    sess.UniqueResponses != null)
+                    sess.Responders = GetResponders(sess, urc);
+                newSessions.Add(newSession);
+            }
+            _overallSession.Sessions = newSessions;
+
+            Rows r = _overallSession.TotalScore();
+            PopulateFinalScore();
+        }
+
+        #endregion
+        #region Private Methods
         private void MoveSession(int index, bool moveUp = true)
         {
             int newIndex = moveUp ?
@@ -73,12 +146,6 @@ namespace GFAC.WindowsForms.Forms
             returnValue = _overallSession.Sessions[index];
             return returnValue;
         }
-        private void PopulateSessionsList()
-        {
-            _columnsSelectedIndex = -1;
-            lstSessions.DataSource = _overallSession.Sessions.Select(c => c.Name).ToList();
-            lstSessions.Refresh();
-        }
         private void RemoveSession()
         {
             foreach (int index in lstSessions.SelectedIndices.Cast<int>().AsEnumerable().Reverse())
@@ -87,68 +154,29 @@ namespace GFAC.WindowsForms.Forms
 
                 if (session != null)
                     _overallSession.Sessions.RemoveAt(index);
-
-                _columnsSelectedIndex = -1;
             }
         }
-
-        private void btnColumnRemove_Click(object sender, EventArgs e)
+        private void lstSessions_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index = lstSessions.SelectedIndex;
-            if (index > -1)
-                RemoveSession();
-            PopulateSessionsList();
-            lstSessions.SelectedIndex = -1;
+            int selectedIndex = lstSessions.SelectedIndex;
+            btnSessionMoveDown.Enabled = (selectedIndex < _overallSession.Sessions.Count - 1 && selectedIndex > -1);
+            btnSessionMoveUp.Enabled = selectedIndex > 0;
+            btnSessionRemove.Enabled = (selectedIndex < _overallSession.Sessions.Count && selectedIndex > -1);
         }
-
-        private void btnColumnAdd_Click(object sender, EventArgs e)
-        {
-            ClearSession();
-            _columnsSelectedIndex =  _overallSession.Sessions.Count;
-            SaveSession();
-            PopulateSessionsList();
-            lstSessions.SelectedIndex = _overallSession.Sessions.Count - 1;
-            _columnsSelectedIndex = lstSessions.SelectedIndex;
-        }
-        private void ClearSession()
-        {
-            _columnsSelectedIndex = -1;
-            txtName.Text = string.Empty;
-        }
-        private void SaveSession()
-        {
-            if (_overallSession == null)
-                _overallSession = new OverallSession();
-
-            bool newColumn = true;
-            Session session = GetSession(_columnsSelectedIndex);
-
-            if (session == null)
-                session = new Session();
-            else
-                newColumn = false;
-
-            session.Name = txtName.Text;
-            //TODO
-
-            if (newColumn)
-                _overallSession.Sessions.Add(session);
-            else
-                _overallSession.Sessions[_columnsSelectedIndex] = session;
-
-        }
-        private void btnSaveOverallSession_Click(object sender, EventArgs e)
+        #endregion
+        #region Overridden Methods
+        public override void Save()
         {
             UpdateOverallSession();
             SaveOverallSession();
         }
-
-        private void btnSaveASOverallSession_Click(object sender, EventArgs e)
+        public override void SaveAs()
         {
             UpdateOverallSession(true);
             SaveOverallSession();
         }
-
+        #endregion
+        #region File methods
         private void UpdateOverallSession(bool removeFileInfo = false)
         {
             if (_overallSession == null)
@@ -170,64 +198,20 @@ namespace GFAC.WindowsForms.Forms
 
             _overallSession = OverallSession.ExportOverallSession(filepath, _overallSession);
         }
-        private void btnLoadOverallSession_Click(object sender, EventArgs e)
-        {
-            string filepath = Functions.SelectFile(FileType.OverallSession, false);
-            OverallSession overallSession = OverallSession.ImportOverallSession(filepath);
-
-            if (overallSession != null)
-            {
-                _overallSession = overallSession;
-                PopulateForm();
-            }
-            else
-                MessageBox.Show("unable to load Overall Session");
-        }
+        #endregion
+        #region Form methods
         private void PopulateForm()
         {
+            if (_overallSession == null)
+                return;
+
             this.txtName.Text = _overallSession.Name;
             PopulateSessionsList();
         }
-
-        private void btnSelectFile_Click(object sender, EventArgs e)
+        private void PopulateSessionsList()
         {
-            txtSessionFile.Text = Functions.SelectFile(FileType.Session);
-            if (!string.IsNullOrEmpty(txtSessionFile.Text))
-            {
-                Session session = Session.ImportSession(txtSessionFile.Text);
-                _overallSession.Sessions.Add(session);
-            }
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            Sessions newSessions = new Sessions();
-            foreach(Session sess in _overallSession.Sessions)
-            {
-                Session newSession = sess;
-
-                if (sess == null)
-                    return;
-
-                if (sess.Profile == null)
-                    return;
-
-                sess.SourceFile = GetSourceFile(sess.SourceFile.FileName);
-
-                UniqueResponseCollection urc = new UniqueResponseCollection();
-                if (sess.SourceFile != null)
-                    urc = GetUniqueResponses(sess);
-
-                if (sess.SourceFile != null &&
-                    sess.UniqueResponses != null)
-                    sess.Responders = GetResponders(sess, urc);
-                newSessions.Add(newSession);
-            }
-            _overallSession.Sessions = newSessions;
-
-            Rows r = _overallSession.TotalScore();
-            PopulateFinalScore();   
-
+            lstSessions.DataSource = _overallSession.Sessions.Select(c => c.Name).ToList();
+            lstSessions.Refresh();
         }
         private void PopulateFinalScore()
         {
@@ -235,6 +219,9 @@ namespace GFAC.WindowsForms.Forms
             dataGridFinalScore.AutoResizeColumns();
             dataGridFinalScore.Refresh();
         }
+        #endregion
+
+
         private SourceFile GetSourceFile(string sourceFileName)
         {
             SourceFile returnValue = new SourceFile();
@@ -258,7 +245,6 @@ namespace GFAC.WindowsForms.Forms
 
             return returnValue;
         }
-
         private UniqueResponseCollection GetUniqueResponses(Session sess)
         {
             UniqueResponseCollection returnValue = new UniqueResponseCollection();

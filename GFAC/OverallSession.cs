@@ -26,6 +26,9 @@ namespace GFAC
             string FilePath = Path.GetDirectoryName(filePath_Name);
             string FileName = Path.GetFileNameWithoutExtension(filePath_Name);
 
+            if (string.IsNullOrEmpty(overallSession.Name))
+                overallSession.Name = FileName;
+
             overallSession = ExportData(overallSession, FilePath, FileName);
             
             return overallSession;

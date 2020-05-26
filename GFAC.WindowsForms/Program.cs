@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GFAC.WindowsForms
@@ -16,7 +13,7 @@ namespace GFAC.WindowsForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SessionForm());
+            Application.Run(new GFAC.WindowsForms.Forms.GFACMain());
         }
     }
 }

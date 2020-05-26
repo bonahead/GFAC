@@ -3,56 +3,63 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Resources;
+using System.Net.NetworkInformation;
 using System.Windows.Forms;
 using static GFAC.Common.Enumerations;
 
 namespace GFAC.WindowsForms.Forms
 {
-    public partial class CalculationProfileForm : Form
+    public partial class ProfileForm : GFACForm
     {
-        public static ResourceManager rm = new ResourceManager("GFAC.WindowsForms.Resources.Labels", typeof(SessionForm).Assembly);
         public Profile _profile;
-        private int _columnsSelectedIndex =-1;
-        public CalculationProfileForm()
+        private int _PreviousSelectedColumnIndex = -1;
+        public ProfileForm()
         {
             InitializeComponent();
-            SetFormLabels();
+            _profile = new Profile();
         }
-        private void SetFormLabels()
+        public ProfileForm(string filepath)
         {
-            lblProfileName.Text = $"{rm.GetString("lblProfileName")}:";
-            lblDefaultColumnType.Text = $"{rm.GetString("lblDefaultColumnType")}:";
-            lblColumns.Text = $"{rm.GetString("lblColumns")}:";
-            lblColumnName.Text = $"{rm.GetString("lblColumnName")}:";
-            lblColumnType.Text = $"{rm.GetString("lblColumnType")}:";
-            lblColumnScore.Text = $"{rm.GetString("lblColumnScore")}:";
-            lblCorrectResponses.Text = $"{rm.GetString("lblCorrectResponses")}:";
+            InitializeComponent();
+            Profile profile = Profile.ImportProfile(filepath);
+
+            if (profile != null)
+            {
+                _profile = profile;
+                PopulateForm();
+            }
+            else
+            {
+                MessageBox.Show(Messages.Profile_UnableToLoad, Captions.Profile_Load, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
         }
-        private void PopulateForm()
-        {
-            this.txtProfileName.Text = _profile.Name;
-            this.cboDefaultColumnType.Text = _profile.DefaultType.ToString();
-            PopulateColumnsList();
-        }
-        private void PopulateColumnsList()
-        {
-            _columnsSelectedIndex = -1;
-            lstColumns.DataSource = _profile.Columns.Select(c => c.Name).ToList();
-            lstColumns.Refresh();
-        }
-        private void btnSaveProfile_Click(object sender, EventArgs e)
+        #region Buttons
+        #endregion
+        #region Private Methods
+        #endregion
+        #region Overridden Methods
+        public override void Save()
         {
             UpdateProfile();
             SaveProfile();
         }
-        private void UpdateProfile (bool removeFileInfo = false)
+        public override void SaveAs()
+        {
+            UpdateProfile(true);
+            SaveProfile();
+        }
+        #endregion
+        #region File Methods
+        private void UpdateProfile(bool removeFileInfo = false)
         {
             if (_profile == null)
                 _profile = new Profile();
 
-            _profile.Name = txtProfileName.Text;
+            _profile.Name = txtName.Text;
             _profile.DefaultType = GetColumnType(cboDefaultColumnType.Text);
+
+            SaveColumnInfo(lstColumns.SelectedIndex);
 
             if (removeFileInfo)
             {
@@ -68,74 +75,69 @@ namespace GFAC.WindowsForms.Forms
 
             _profile = Profile.ExportProfile(filepath, _profile);
         }
-
-        private void btnSaveASProfile_Click(object sender, EventArgs e)
+        #endregion
+        #region Form Methods
+        private void PopulateForm()
         {
-            UpdateProfile(true);
-            SaveProfile();
+            this.txtName.Text = _profile.Name;
+            this.cboDefaultColumnType.Text = _profile.DefaultType.ToString();
+            PopulateColumnsList();
         }
-
-        private void btnLoadProfile_Click(object sender, EventArgs e)
+        private void PopulateColumnsList()
         {
-            string filepath = Functions.SelectFile(FileType.Profile, false);
-
-            Profile profile = Profile.ImportProfile(filepath);
-
-            if (profile != null)
+            lstColumns.Items.Clear();
+            foreach(string columnName in _profile.Columns.Select(c => c.Name))
             {
-                _profile = profile;
-                PopulateForm();
+                lstColumns.Items.Add(columnName);
             }
-            else
-                MessageBox.Show("unable to load Session");
+            lstColumns.Refresh();
+        }
+        private void SaveColumnInfo(int index)
+        {
+            if (index == -1)
+                return;
+
+            _profile.Columns[index].Name = txtColumnName.Text;
+            _profile.Columns[index].Type = GetColumnType(cboColumnType.Text);
+            _profile.Columns[index].Score = int.TryParse(txtScore.Text, out int score) ?
+                                                                score :
+                                                                0;
+            _profile.Columns[index].CorrectResponses = lstCorrectResponses.Items.Cast<String>().ToList();
         }
         private void lstColumns_SelectedIndexChanged(object sender, EventArgs e)
         {
             int selectedIndex = lstColumns.SelectedIndex;
-            if (_columnsSelectedIndex > -1)
+            btnColumnMoveDown.Enabled = (selectedIndex < _profile.Columns.Count - 1 && selectedIndex > -1);
+            btnColumnMoveUp.Enabled = selectedIndex > 0;
+            btnColumnRemove.Enabled = (selectedIndex < _profile.Columns.Count && selectedIndex > -1);
+
+            if (selectedIndex != _PreviousSelectedColumnIndex && _PreviousSelectedColumnIndex > -1)
             {
-                SaveColumnInfo();
+                SaveColumnInfo(_PreviousSelectedColumnIndex);
                 PopulateColumnsList();
+                _PreviousSelectedColumnIndex = selectedIndex;
+                lstColumns.SelectedIndex = selectedIndex;
             }
 
             if (selectedIndex > -1)
             {
-                PopulateColumnInfo();
+                PopulateColumnInfo(selectedIndex);
             }
         }
+        #endregion
         private ProfileColumn GetProfileColumn(int index)
         {
             ProfileColumn returnValue = null;
             if (_profile == null)
                 return returnValue;
 
-            if (_profile.Columns.Count <= index )
+            if (_profile.Columns.Count <= index)
                 return returnValue;
 
             returnValue = _profile.Columns[index];
             return returnValue;
         }
-        private void SaveColumnInfo()
-        {
-            bool newColumn = true;
-            ProfileColumn profileColumn = GetProfileColumn(_columnsSelectedIndex);
-
-            if (profileColumn == null)
-                profileColumn = new ProfileColumn();
-            else
-                newColumn = false;
-
-            profileColumn.Name = txtColumnName.Text;
-            profileColumn.Type = GetColumnType(cboColumnType.SelectedItem);
-            profileColumn.Score = int.Parse(txtScore.Text);
-            profileColumn.CorrectResponses = GetCorrectResponses();
-
-            if (newColumn)
-                _profile.Columns.Add(profileColumn);
-            else
-                _profile.Columns[_columnsSelectedIndex] = profileColumn;
-            
-        }
+        
         private void RemoveColumnInfo()
         {
             foreach (int index in lstColumns.SelectedIndices.Cast<int>().AsEnumerable().Reverse())
@@ -144,17 +146,15 @@ namespace GFAC.WindowsForms.Forms
 
                 if (profileColumn != null)
                     _profile.Columns.RemoveAt(index);
-
-                _columnsSelectedIndex = -1;
             }
         }
         private void ClearColumnInfo()
         {
-            _columnsSelectedIndex = -1;
             txtColumnName.Text = string.Empty;
             cboColumnType.SelectedIndex = 0;
             txtScore.Text = "1";
-           // lstCorrectResponses.Items.Clear();
+            PopulateCorrectResponses(new List<string>());
+
         }
         private void MoveColumnInfo(int index, bool moveUp = true)
         {
@@ -164,13 +164,13 @@ namespace GFAC.WindowsForms.Forms
 
             if (_profile.Columns.Count() < newIndex && newIndex > -1)
                 return;
-            
+
             ProfileColumn oldProfileColumn = GetProfileColumn(index);
             ProfileColumn newProfileColumn = GetProfileColumn(newIndex);
-                
+
 
             _profile.Columns[index] = newProfileColumn;
-            _profile.Columns[newIndex] = oldProfileColumn;          
+            _profile.Columns[newIndex] = oldProfileColumn;
         }
         private List<string> GetCorrectResponses()
         {
@@ -197,9 +197,12 @@ namespace GFAC.WindowsForms.Forms
                     return ColumnType.None;
             }
         }
-        private void PopulateColumnInfo()
+        private void PopulateColumnInfo(int index)
         {
-            ProfileColumn profileColumn = GetProfileColumn(lstColumns.SelectedIndex);
+            if (index == -1)
+                return;
+
+            ProfileColumn profileColumn = GetProfileColumn(index);
 
             if (profileColumn == null)
                 return;
@@ -218,9 +221,8 @@ namespace GFAC.WindowsForms.Forms
         private void btnColumnMoveDown_Click(object sender, EventArgs e)
         {
             int index = lstColumns.SelectedIndex;
-            if (index > -1)
-                MoveColumnInfo(index, false);
- 
+            MoveColumnInfo(index, false);
+
             PopulateColumnsList();
             lstColumns.SelectedIndex = index + 1;
         }
@@ -228,8 +230,7 @@ namespace GFAC.WindowsForms.Forms
         private void btnColumnMoveUp_Click(object sender, EventArgs e)
         {
             int index = lstColumns.SelectedIndex;
-            if (index > -1)
-                MoveColumnInfo(index);
+            MoveColumnInfo(index);
 
             PopulateColumnsList();
             lstColumns.SelectedIndex = index - 1;
@@ -238,45 +239,40 @@ namespace GFAC.WindowsForms.Forms
         private void btnColumnRemove_Click(object sender, EventArgs e)
         {
             int index = lstColumns.SelectedIndex;
-            if (index > -1)
-                RemoveColumnInfo();
+            RemoveColumnInfo();
+
             PopulateColumnsList();
-            lstColumns.SelectedIndex =  - 1;
+            lstColumns.SelectedIndex = -1;
         }
 
         private void btnColumnAdd_Click(object sender, EventArgs e)
         {
+            AddColumn();
             ClearColumnInfo();
-            _columnsSelectedIndex = _profile.Columns.Count;
-            SaveColumnInfo();
             PopulateColumnsList();
             lstColumns.SelectedIndex = _profile.Columns.Count - 1;
-            _columnsSelectedIndex = lstColumns.SelectedIndex;
         }
-
-        private void btnCorrectResponseAdd_Click(object sender, EventArgs e)
+        private void AddColumn()
         {
-            if (string.IsNullOrEmpty(txtAddCorrectResponses.Text))
-                return;
-
-            ProfileColumn column = GetProfileColumn(lstColumns.SelectedIndex);
-            List<string> newCorrectResponses =
-                txtAddCorrectResponses.Text
-                .Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
-
-            foreach(string newCR in newCorrectResponses)
-            {
-                if (!column.CorrectResponses.Contains(newCR.Trim().ToUpper()))
-                    column.CorrectResponses.Add(newCR.Trim().ToUpper());
-            }
-
-            PopulateCorrectResponses(column.CorrectResponses);
+            _profile.Columns.Add(new ProfileColumn() { Name = "New Column" });
         }
+        //private void btnCorrectResponseAdd_Click(object sender, EventArgs e)
+        //{
+        //    if (string.IsNullOrEmpty(txtAddCorrectResponses.Text))
+        //        return;
 
-        private void btnDefault_Click(object sender, EventArgs e)
-        {
-            _profile = Profile.GetDefault();
-            PopulateForm();
-        }
+        //    ProfileColumn column = GetProfileColumn(lstColumns.SelectedIndex);
+        //    List<string> newCorrectResponses =
+        //        txtAddCorrectResponses.Text
+        //        .Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
+
+        //    foreach (string newCR in newCorrectResponses)
+        //    {
+        //        if (!column.CorrectResponses.Contains(newCR.Trim().ToUpper()))
+        //            column.CorrectResponses.Add(newCR.Trim().ToUpper());
+        //    }
+
+        //    PopulateCorrectResponses(column.CorrectResponses);
+        //}
     }
 }
