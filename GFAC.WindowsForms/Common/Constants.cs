@@ -1,4 +1,6 @@
-﻿namespace GFAC.Common
+﻿using System.CodeDom;
+
+namespace GFAC.Common
 {
     public class Constants
     {
@@ -14,6 +16,7 @@
         //Session
         public const string Session_UnableToLoad = "Unable to load Session";
         public const string Session_UniqueName = "Session Name should be Unique";
+        public const string Session_NoProfile = "There seems to be no profile selected. Would you like to make a new profile based on the sourcefile?";
 
         //Profile
         public const string Profile_UnableToLoad = "Unable to load Profile";

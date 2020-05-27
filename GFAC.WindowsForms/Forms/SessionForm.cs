@@ -38,10 +38,9 @@ namespace GFAC.WindowsForms.Forms
         {
             txtProfile.Text = Functions.SelectFile(FileType.Profile);
             if (!string.IsNullOrEmpty(txtProfile.Text))
-            {
                 _session.Profile = Profile.ImportProfile(txtProfile.Text);
-            }
-            if (!string.IsNullOrEmpty(txtProfile.Text) &&
+            
+            if (_session.Profile != null &&
                     !string.IsNullOrEmpty(txtInputFile.Text))
             {
                 ImportFile();
@@ -50,12 +49,37 @@ namespace GFAC.WindowsForms.Forms
         private void SelectFile_Click(object sender, EventArgs e)
         {
             txtInputFile.Text = Functions.SelectFile(FileType.CSV);
+
             if (!string.IsNullOrEmpty(txtProfile.Text) &&
-                !string.IsNullOrEmpty(txtInputFile.Text))
+                    _session.Profile == null)
+                _session.Profile = Profile.ImportProfile(txtProfile.Text);
+
+            if(_session.Profile == null)
             {
-                ImportFile();
+                DialogResult result =MessageBox.Show(Messages.Session_NoProfile, Captions.Session_Load, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if(result == DialogResult.Yes)
+                    ProcessNoProfile(txtInputFile.Text);
+
+                if (result == DialogResult.Cancel)
+                    return;
             }
+
+            if (!string.IsNullOrEmpty(txtInputFile.Text))
+                ImportFile();
         }
+
+        private void ProcessNoProfile(string sourceFilePath_Name)
+        {
+            SourceFile sf = new SourceFile(sourceFilePath_Name);
+            SourceFile sourceFile = sf.Import();
+
+            ProfileWizardForm pwf = new ProfileWizardForm(sourceFile);
+            DialogResult result = pwf.ShowWizard();
+            if (result == DialogResult.OK)
+                _session.Profile = pwf.ReturnValue;
+            txtProfile.Text = _session.Profile_Filepath;
+        }
+
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             ImportFile();

@@ -16,10 +16,10 @@ namespace GFAC
         public UniqueResponseCollection UniqueResponseCollection { get; set; }
         public Session()
         {
-            SourceFile = new SourceFile();
-            Profile = new Profile();
-            Responders = new Responders();
-            UniqueResponses = new UniqueResponses();
+            //SourceFile = new SourceFile();
+            //Profile = new Profile();
+            //Responders = new Responders();
+            //UniqueResponses = new UniqueResponses();
         }
         public static Session ExportSession(string filePath_Name, Session session)
         {

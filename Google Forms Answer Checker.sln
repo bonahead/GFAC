@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GFAC.WindowsForms", "GFAC.W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GFAC", "GFAC\GFAC.csproj", "{279C267A-0CB2-47F3-8489-3A0B9C4C613C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBG.SimpleWizard", "..\MBG.SimpleWizard\MBG.SimpleWizard\MBG.SimpleWizard.csproj", "{3C8EA16A-48CC-4BE5-9B7C-BB513DD71599}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{279C267A-0CB2-47F3-8489-3A0B9C4C613C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{279C267A-0CB2-47F3-8489-3A0B9C4C613C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{279C267A-0CB2-47F3-8489-3A0B9C4C613C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C8EA16A-48CC-4BE5-9B7C-BB513DD71599}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C8EA16A-48CC-4BE5-9B7C-BB513DD71599}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C8EA16A-48CC-4BE5-9B7C-BB513DD71599}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C8EA16A-48CC-4BE5-9B7C-BB513DD71599}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
