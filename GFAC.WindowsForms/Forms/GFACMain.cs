@@ -14,16 +14,6 @@ namespace GFAC.WindowsForms.Forms
             InitializeComponent();
         }
 
-        private void ShowNewForm(object sender, EventArgs e)
-        {
-            New_GFACSession();
-        }
-
-        private void OpenFile(object sender, EventArgs e)
-        {
-            Open_GFACSession();
-        }
-
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GFACForm activeChild = (GFACForm)this.ActiveMdiChild;
@@ -100,7 +90,7 @@ namespace GFAC.WindowsForms.Forms
             childFormNumber++;
             overallSessionForm.Show();
         }
-        private void responseSessionToolStripMenuItem_Click(object sender, EventArgs e)
+        private void New_ResponseSessionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SessionForm sessionForm = new SessionForm();
             sessionForm.MdiParent = this;
@@ -109,7 +99,7 @@ namespace GFAC.WindowsForms.Forms
             sessionForm.Show();
         }
 
-        private void profileToolStripMenuItem_Click(object sender, EventArgs e)
+        private void New_ProfileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ProfileForm profileForm = new ProfileForm();
             profileForm.MdiParent = this;

@@ -18,21 +18,22 @@ namespace GFAC
         {
             UniqueRepsonses = new List<UniqueResponses>();
         }
-        public UniqueResponseCollection CollectUniqueResponses(Session session)
+        public static UniqueResponseCollection CollectUniqueResponses(Session session)
         {
             if (session.SourceFile == null ||
                     session.Profile == null)
                 return null;
 
-            SourceFile = session.SourceFile;
-            Profile = session.Profile;
             UniqueResponseCollection returnValue = new UniqueResponseCollection();
+            returnValue.SourceFile = session.SourceFile;
+            returnValue.Profile = session.Profile;
+            
             bool firstRow = true;
-            foreach (Row row in SourceFile.Rows)
+            foreach (Row row in returnValue.SourceFile.Rows)
             {
                 if (firstRow)
                 {
-                    returnValue = GetColumnHeaders(row);
+                    returnValue = GetColumnHeaders(returnValue, row);
                     firstRow = false;
                 }
                 else
@@ -43,16 +44,16 @@ namespace GFAC
             return returnValue;
         }
 
-        private UniqueResponseCollection GetUniqueResponse(UniqueResponseCollection urc, Row row)
+        private static UniqueResponseCollection GetUniqueResponse(UniqueResponseCollection urc, Row row)
         {
             UniqueResponseCollection returnValue = urc;
             int colIndex = 0;
             int respIndex = 0;
             foreach (Column column in row.Columns)
             {
-                ColumnType columnType = Profile.Columns.Count + 1 > colIndex ?
-                    Profile.Columns[colIndex].Type :
-                    Profile.DefaultType;
+                ColumnType columnType = urc.Profile.Columns.Count + 1 > colIndex ?
+                    urc.Profile.Columns[colIndex].Type :
+                    urc.Profile.DefaultType;
 
                 if (columnType.Equals(ColumnType.Score))
                 {
@@ -63,7 +64,7 @@ namespace GFAC
                             returnValue.UniqueRepsonses[respIndex].Add(new UniqueResponse()
                             {
                                 Response = column.ColumnValue,
-                                Correct = true
+                                Correct = urc.Profile.Columns[colIndex].CorrectResponses.Contains(column.ColumnValue)
                             });
                         }
                     }
@@ -74,15 +75,16 @@ namespace GFAC
             return returnValue;
         }
 
-        private UniqueResponseCollection GetColumnHeaders(Row row)
+        private static UniqueResponseCollection GetColumnHeaders(UniqueResponseCollection urc, Row row)
         {
-            UniqueResponseCollection returnValue = new UniqueResponseCollection();
+            UniqueResponseCollection returnValue = urc;
+            returnValue.UniqueRepsonses.Clear();
             int colIndex = 0;
             foreach (Column column in row.Columns)
             {
-                ColumnType columnType = Profile.Columns.Count + 1 > colIndex ?
-                    Profile.Columns[colIndex].Type :
-                    Profile.DefaultType;
+                ColumnType columnType = urc.Profile.Columns.Count + 1 > colIndex ?
+                    urc.Profile.Columns[colIndex].Type :
+                    urc.Profile.DefaultType;
 
                 if (columnType.Equals(ColumnType.Score))
                 {

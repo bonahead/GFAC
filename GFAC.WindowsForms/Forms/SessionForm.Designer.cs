@@ -108,7 +108,6 @@
             this.DataGridSource.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(this.DataGridSource, "DataGridSource");
             this.DataGridSource.Name = "DataGridSource";
-            this.DataGridSource.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridSource_ColumnHeaderMouseDoubleClick);
             // 
             // tabResponses
             // 

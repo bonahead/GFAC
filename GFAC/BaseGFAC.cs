@@ -68,7 +68,7 @@ namespace GFAC
                     {
                         returnValue.Columns.Add(new DataColumn()
                         {
-                            ColumnName = $"{column.ColumnValue}{returnValue.Columns.Count}"  ,
+                            ColumnName = $"{column.ColumnValue}",
                             DataType = typeof(string)
                         });
                     }

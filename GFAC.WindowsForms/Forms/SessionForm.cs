@@ -109,13 +109,6 @@ namespace GFAC.WindowsForms.Forms
                 _session.Profile.FileName :
                 string.Empty;
 
-            if (_session.SourceFile != null)
-                _uniqueResponseCollection = GetUniqueResponses();
-
-            if (_session.SourceFile != null &&
-                _uniqueResponseCollection != null)
-                _responders = GetResponders();
-
             if (_session.SourceFile != null) PopulateTabSource();
             if (_responders != null) PopulateTabFinalScore();
             if (_responders != null) PopulateTabResponses();
@@ -128,13 +121,13 @@ namespace GFAC.WindowsForms.Forms
         }
         private void PopulateTabFinalScore()
         {
-            dataGridFinalScore.DataSource = _responders.DataTableFinalScore;
+            dataGridFinalScore.DataSource = _session.Responders.DataTableFinalScore;
             dataGridFinalScore.AutoResizeColumns();
             dataGridFinalScore.Refresh();
         }
         private void PopulateTabResponses()
         {
-            dataGridResponses.DataSource = _responders.DataTableResponses;
+            dataGridResponses.DataSource = _session.Responders.DataTableResponses;
             dataGridResponses.AutoResizeColumns();
             dataGridResponses.Refresh();
         }
@@ -144,79 +137,37 @@ namespace GFAC.WindowsForms.Forms
         {
             if (_session == null)
                 return;
-            if (_session.Profile == null)
-                return;
 
-            _session.SourceFile = GetSourceFile();
-            if (_session.SourceFile != null)
-                _uniqueResponseCollection = GetUniqueResponses();
+            _session.SourceFile_Filepath = txtInputFile.Text;
+            _session.Profile_Filepath = txtProfile.Text;
 
-            if (_session.SourceFile != null &&
-                _uniqueResponseCollection != null)
-                _responders = GetResponders();
+            _session.ProcessSourceFile();
 
             if (_session.SourceFile != null) PopulateTabSource();
-            if (_responders != null) PopulateTabFinalScore();
-            if (_responders != null) PopulateTabResponses();
-            //if (_uniqueResponseCollection != null) PopulateTabResponses();
-        }
-        private Responders GetResponders()
-        {
-            //TODO: To Be Moved
-            Responders returnValue = new Responders();
-            try
+            if (_session.Responders != null)
             {
-                Responders responders = new Responders();
-                returnValue = responders.ProcessResponders(_session, _uniqueResponseCollection);
+                PopulateTabFinalScore();
+                PopulateTabResponses();
             }
-            catch { }
-
-            return returnValue;
         }
-        private UniqueResponseCollection GetUniqueResponses()
-        {
-            //TODO: To Be Moved
-            UniqueResponseCollection returnValue = new UniqueResponseCollection();
-            try
-            {
-                UniqueResponseCollection uniqueResponseCollection = new UniqueResponseCollection();
-                returnValue = uniqueResponseCollection.CollectUniqueResponses(_session);
-            }
-            catch { }
+      
+        //private void DataGridSource_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        //{//TODO Make DataGridHandler
+        //    //ProfileColumnType
+        //    //Grey = None
+        //    //Blue = Report
+        //    //Green = Score
+        //    DataGridSource.EnableHeadersVisualStyles = false;
+        //    DataGridViewColumn column = DataGridSource.Columns[e.ColumnIndex];
 
-            return returnValue;
-        }
-        private SourceFile GetSourceFile()
-        {
-            //TODO: To Be Moved
-            SourceFile returnValue = new SourceFile();
-            try
-            {
-                SourceFile sourceFile = new SourceFile(txtInputFile.Text);
-                returnValue = sourceFile.Import();
-            }
-            catch { }
-            return returnValue;
-        }
-        
-        private void DataGridSource_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {//TODO Make DataGridHandler
-            //ProfileColumnType
-            //Grey = None
-            //Blue = Report
-            //Green = Score
-            DataGridSource.EnableHeadersVisualStyles = false;
-            DataGridViewColumn column = DataGridSource.Columns[e.ColumnIndex];
-
-            if (column.HeaderCell.Style.BackColor == Color.Gray)
-                column.HeaderCell.Style.BackColor = Color.Blue;
-            else if (column.HeaderCell.Style.BackColor == Color.Blue)
-                column.HeaderCell.Style.BackColor = Color.Green;
-            else if (column.HeaderCell.Style.BackColor == Color.Green)
-                column.HeaderCell.Style.BackColor = Color.Gray;
-            else
-                column.HeaderCell.Style.BackColor = Color.Blue;
-        }
-
+        //    if (column.HeaderCell.Style.BackColor == Color.Gray)
+        //        column.HeaderCell.Style.BackColor = Color.Blue;
+        //    else if (column.HeaderCell.Style.BackColor == Color.Blue)
+        //        column.HeaderCell.Style.BackColor = Color.Green;
+        //    else if (column.HeaderCell.Style.BackColor == Color.Green)
+        //        column.HeaderCell.Style.BackColor = Color.Gray;
+        //    else
+        //        column.HeaderCell.Style.BackColor = Color.Blue;
+        //}
     }
 }

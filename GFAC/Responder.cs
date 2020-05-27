@@ -25,56 +25,51 @@ namespace GFAC
         private SourceFile SourceFile { get; set; }
         private Profile Profile { get; set; }
         private UniqueResponseCollection UniqueResponseCollection { get; set; }
-        public Responders ProcessResponders(Session session, UniqueResponseCollection uniqueResponseCollection) 
+        public static Responders ProcessResponders(Session session)
         {
             if (session.SourceFile == null ||
                     session.Profile == null ||
-                    uniqueResponseCollection == null)
+                    session.UniqueResponseCollection == null)
                 return null;
 
-            SourceFile = session.SourceFile;
-            Profile = session.Profile;
-            UniqueResponseCollection = uniqueResponseCollection;
             Responders returnValue = new Responders();
+            returnValue.SourceFile = session.SourceFile;
+            returnValue.Profile = session.Profile;
+            returnValue.UniqueResponseCollection = session.UniqueResponseCollection;
 
-            bool firstRow = true;
-            foreach (Row row in SourceFile.Rows)
+            foreach(Row row in returnValue.SourceFile.Rows.Skip(1))
             {
-                if (firstRow)
-                    firstRow = false;
-                else
+                Responder newResponder = new Responder();
+                int colindex = 0;
+                int respIndex = 0;
+                ColumnType columnType;
+                foreach (Column column in row.Columns)
                 {
-                    Responder newResponder = new Responder();
-                    int colindex = 0;
-                    int respIndex = 0;
-                    ColumnType columnType;
-                    foreach (Column column in row.Columns)
-                    {
-                        columnType = Profile.Columns.Count + 1 > colindex ?
-                            Profile.Columns[colindex].Type :
-                            Profile.DefaultType;
+                    columnType = returnValue.Profile.Columns.Count + 1 > colindex ?
+                        returnValue.Profile.Columns[colindex].Type :
+                        returnValue.Profile.DefaultType;
 
-                        switch (columnType)
-                        {
-                            case ColumnType.Report:
-                                newResponder.ReportColumns.Add(column.ColumnValue);
-                                break;
-                            case ColumnType.Score:
-                                newResponder.ScoreColumns.Add(column.ColumnValue);
-                                int responseScore = uniqueResponseCollection.UniqueRepsonses[respIndex].Any(ur => ur.Response.Equals(column.ColumnValue) && ur.Correct) ?
-                                    Profile.Columns[colindex].Score :
-                                    0;
-                                newResponder.ResponseScore.Add(responseScore);
-                                respIndex++;
-                                break;
-                            default:
-                                break;
-                        }
-                        colindex++;
+                    switch (columnType)
+                    {
+                        case ColumnType.Report:
+                            newResponder.ReportColumns.Add(column.ColumnValue);
+                            break;
+                        case ColumnType.Score:
+                            newResponder.ScoreColumns.Add(column.ColumnValue);
+                            int responseScore = returnValue.UniqueResponseCollection.UniqueRepsonses[respIndex].Any(ur => ur.Response.Equals(column.ColumnValue) && ur.Correct) ?
+                                returnValue.Profile.Columns[colindex].Score :
+                                0;
+                            newResponder.ResponseScore.Add(responseScore);
+                            respIndex++;
+                            break;
+                        default:
+                            break;
                     }
-                    returnValue.Add(newResponder);
+                    colindex++;
                 }
+                returnValue.Add(newResponder);
             }
+            
             return returnValue;
         }
         public DataTable DataTableResponses

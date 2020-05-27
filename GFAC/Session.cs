@@ -7,10 +7,13 @@ namespace GFAC
     public class Session : BaseGFAC
     {
         public string Name { get; set; }
+        public string  SourceFile_Filepath { get; set; }
+        public string  Profile_Filepath { get; set; }
         public SourceFile SourceFile { get; set; }
         public Profile Profile { set; get; }
         public Responders Responders { get; set; }
         public UniqueResponses UniqueResponses { get; set; }
+        public UniqueResponseCollection UniqueResponseCollection { get; set; }
         public Session()
         {
             SourceFile = new SourceFile();
@@ -46,6 +49,20 @@ namespace GFAC
             {
                 return null;
             }
+        }
+        public void ProcessSourceFile()
+        {
+            if (this.SourceFile_Filepath == null)
+                return;
+
+            SourceFile sourceFile = new SourceFile(this.SourceFile_Filepath);
+            this.SourceFile = sourceFile.Import();
+            this.UniqueResponseCollection = this.SourceFile != null ?
+                UniqueResponseCollection.CollectUniqueResponses(this) :
+                null;
+            this.Responders = this.SourceFile != null && this.UniqueResponseCollection != null ?
+                Responders.ProcessResponders(this) :
+                null;
         }
     }
     public class Sessions : List<Session> { }

@@ -11,14 +11,13 @@ namespace GFAC
         public SourceFile()
         {
             Rows = new Rows();
+;
         }
         public SourceFile(string filePath_Name, bool toUpper = true, bool trimValue = true)
         {
             if (!string.IsNullOrEmpty(filePath_Name))
             {
                 FileName = filePath_Name;
-                //FilePath = Path.GetDirectoryName(filePath_Name);
-                //FileName = Path.GetFileNameWithoutExtension(filePath_Name);
             }
 
             ToUpper = toUpper;
