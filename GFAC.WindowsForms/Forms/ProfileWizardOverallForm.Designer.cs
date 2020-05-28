@@ -38,7 +38,7 @@
             // 
             this.lblDefaultColumnType.AutoSize = true;
             this.lblDefaultColumnType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblDefaultColumnType.Location = new System.Drawing.Point(12, 39);
+            this.lblDefaultColumnType.Location = new System.Drawing.Point(7, 39);
             this.lblDefaultColumnType.Name = "lblDefaultColumnType";
             this.lblDefaultColumnType.Size = new System.Drawing.Size(71, 13);
             this.lblDefaultColumnType.TabIndex = 24;
@@ -51,16 +51,16 @@
             "None",
             "Report",
             "Score"});
-            this.cboDefaultColumnType.Location = new System.Drawing.Point(93, 35);
+            this.cboDefaultColumnType.Location = new System.Drawing.Point(170, 36);
             this.cboDefaultColumnType.Name = "cboDefaultColumnType";
-            this.cboDefaultColumnType.Size = new System.Drawing.Size(482, 21);
+            this.cboDefaultColumnType.Size = new System.Drawing.Size(235, 21);
             this.cboDefaultColumnType.TabIndex = 23;
             // 
             // lblProfileName
             // 
             this.lblProfileName.AutoSize = true;
             this.lblProfileName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblProfileName.Location = new System.Drawing.Point(12, 13);
+            this.lblProfileName.Location = new System.Drawing.Point(7, 9);
             this.lblProfileName.Name = "lblProfileName";
             this.lblProfileName.Size = new System.Drawing.Size(67, 13);
             this.lblProfileName.TabIndex = 22;
@@ -68,9 +68,9 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(93, 9);
+            this.txtName.Location = new System.Drawing.Point(170, 7);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(482, 20);
+            this.txtName.Size = new System.Drawing.Size(235, 20);
             this.txtName.TabIndex = 21;
             // 
             // ProfileWizardOverallForm
@@ -82,7 +82,7 @@
             this.Controls.Add(this.lblProfileName);
             this.Controls.Add(this.txtName);
             this.Name = "ProfileWizardOverallForm";
-            this.Size = new System.Drawing.Size(582, 69);
+            this.Size = new System.Drawing.Size(422, 69);
             this.ResumeLayout(false);
             this.PerformLayout();
 

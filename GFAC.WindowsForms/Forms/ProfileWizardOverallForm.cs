@@ -14,7 +14,7 @@ namespace GFAC.WindowsForms.Forms
 {
     public partial class ProfileWizardOverallForm : UserControl, IWizardPage
     {
-        public string Name { get; set; }
+        public string ProfileName { get; set; }
         public string DefaultColumnType { get; set; }
         public ProfileWizardOverallForm()
         {
@@ -55,7 +55,7 @@ namespace GFAC.WindowsForms.Forms
 
         public void Save()
         {
-            Name = txtName.Text;
+            ProfileName = txtName.Text;
             DefaultColumnType = cboDefaultColumnType.Text;
         }
         void IWizardPage.Load()

@@ -13,13 +13,17 @@ namespace GFAC.WindowsForms.Forms
 {
     public partial class ProfileWizardColumnForm : UserControl, IWizardPage
     {
-        public string Name { get; set; }
+        private Column Column { get; set; }
+        public string ColumnName { get; set; }
         public string ColumnType { get; set; }
         public int Score { get; set; }
         public List<string> CorrectResponses { get; set; }
-        public ProfileWizardColumnForm()
+        public List<string> CurrentResponses { get; set; }
+        public ProfileWizardColumnForm(Column column, UniqueResponses urc)
         {
             InitializeComponent();
+            Column = column;
+            CurrentResponses = urc.Select(r => r.Response).ToList();
         }
         public UserControl Content
         {
@@ -30,12 +34,13 @@ namespace GFAC.WindowsForms.Forms
         {
             //TODO: ReturnValue is not correct
             get {
-                return (!string.IsNullOrEmpty(txtColumnName.Text) &&
-                    cboColumnType.SelectedIndex > -1 &&
-                    cboColumnType.Text.Equals("Score") ?
-                      (!string.IsNullOrEmpty(txtScore.Text) &&
+                bool ColumnNameFilled = !string.IsNullOrEmpty(txtColumnName.Text);
+                bool ScoreFilled = cboColumnType.Text.Equals("Score") ?
+                    (!string.IsNullOrEmpty(txtScore.Text) &&
                       int.TryParse(txtScore.Text, out int checkScore)) :
-                      true);
+                      true;
+                return (ColumnNameFilled &&
+                    ScoreFilled);
             }
         }
         public string ValidationMessage
@@ -45,7 +50,6 @@ namespace GFAC.WindowsForms.Forms
                 StringBuilder message = new StringBuilder();
 
                 if (string.IsNullOrEmpty(txtColumnName.Text)) message.AppendLine("Name should be provided!");
-                if (cboColumnType.SelectedIndex == -1) message.AppendLine("Type should be provided!");
                 if (cboColumnType.Text.Equals("Score") && 
                     string.IsNullOrEmpty(txtScore.Text) ) message.AppendLine("Score should be provided!");
                 if (cboColumnType.Text.Equals("Score") &&
@@ -60,14 +64,74 @@ namespace GFAC.WindowsForms.Forms
         }
         public void Save()
         {
-            Name = txtColumnName.Text;
+            ColumnName = txtColumnName.Text;
             ColumnType = cboColumnType.Text;
             Score = !string.IsNullOrEmpty(txtScore.Text)? int.Parse(txtScore.Text): 0;
             CorrectResponses = lstCorrectResponses.Items.Cast<string>().ToList();
         }
-
         void IWizardPage.Load()
         {
+            txtColumnName.Text = Column.ColumnValue;
+            lstCurrentResponses.Items.AddRange(CurrentResponses.ToArray());
+        }
+
+        private void btnCorrectResponseAdd_Click(object sender, EventArgs e)
+        {
+            using (CorrectResponsesForm crf = new CorrectResponsesForm())
+            {
+                DialogResult result = crf.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    string[] correctResponses = crf.ReturnValue
+                                                .Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                    foreach (string cr in correctResponses)
+                    {
+                        if (!string.IsNullOrEmpty(cr))
+                            if (!lstCorrectResponses.Items.Contains(cr))
+                                lstCorrectResponses.Items.Add(cr);
+                    }
+                }
+            }
+            PopulateCorrectResponses(lstCorrectResponses.Items.Cast<String>().ToList());
+        }
+
+        private void btnCorrectResponseRemove_Click(object sender, EventArgs e)
+        {
+            foreach (int index in lstCorrectResponses.SelectedIndices.Cast<int>().AsEnumerable().Reverse())
+            {
+                lstCorrectResponses.Items.RemoveAt(index);
+            }
+            PopulateCorrectResponses(lstCorrectResponses.Items.Cast<String>().ToList());
+        }
+        private void PopulateCorrectResponses(List<string> correctResponses)
+        {
+            lstCorrectResponses.Items.Clear();
+            foreach (string value in correctResponses.OrderBy(cr => cr).ToList())
+            {
+                lstCorrectResponses.Items.Add(value);
+            }
+            lstCorrectResponses.Refresh();
+        }
+
+        private void lstCurrentResponses_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnCurrentToCorrectResponses.Enabled = lstCurrentResponses.SelectedIndices.Count != 0;
+        }
+
+        private void btnCurrentToCorrectResponses_Click(object sender, EventArgs e)
+        {
+            foreach (string cr in lstCurrentResponses.SelectedItems.Cast<string>().ToList())
+            {
+                if (!string.IsNullOrEmpty(cr))
+                    if (!lstCorrectResponses.Items.Contains(cr))
+                        lstCorrectResponses.Items.Add(cr);
+            }
+            PopulateCorrectResponses(lstCorrectResponses.Items.Cast<String>().ToList());
+        }
+
+        private void lstCorrectResponses_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnCorrectResponseRemove.Enabled = lstCorrectResponses.SelectedIndices.Count != 0;
         }
     }
 }

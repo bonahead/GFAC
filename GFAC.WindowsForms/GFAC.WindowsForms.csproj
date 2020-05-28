@@ -117,6 +117,9 @@
     <EmbeddedResource Include="Forms\ProfileWizardColumnForm.resx">
       <DependentUpon>ProfileWizardColumnForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProfileWizardForm.resx">
+      <DependentUpon>ProfileWizardForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProfileWizardOverallForm.resx">
       <DependentUpon>ProfileWizardOverallForm.cs</DependentUpon>
     </EmbeddedResource>

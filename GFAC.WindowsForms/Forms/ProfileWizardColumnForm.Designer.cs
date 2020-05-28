@@ -37,7 +37,9 @@
             this.txtScore = new System.Windows.Forms.TextBox();
             this.lstCorrectResponses = new System.Windows.Forms.ListBox();
             this.lblColumnScore = new System.Windows.Forms.Label();
-            this.lblCorrectResponses = new System.Windows.Forms.Label();
+            this.lblCurrentResponses = new System.Windows.Forms.Label();
+            this.lstCurrentResponses = new System.Windows.Forms.ListBox();
+            this.btnCurrentToCorrectResponses = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtColumnName
@@ -60,12 +62,13 @@
             // btnCorrectResponseRemove
             // 
             this.btnCorrectResponseRemove.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCorrectResponseRemove.Location = new System.Drawing.Point(10, 210);
+            this.btnCorrectResponseRemove.Location = new System.Drawing.Point(411, 210);
             this.btnCorrectResponseRemove.Name = "btnCorrectResponseRemove";
             this.btnCorrectResponseRemove.Size = new System.Drawing.Size(154, 26);
             this.btnCorrectResponseRemove.TabIndex = 53;
             this.btnCorrectResponseRemove.Text = "Delete Response";
             this.btnCorrectResponseRemove.UseVisualStyleBackColor = true;
+            this.btnCorrectResponseRemove.Click += new System.EventHandler(this.btnCorrectResponseRemove_Click);
             // 
             // cboColumnType
             // 
@@ -82,12 +85,13 @@
             // btnCorrectResponseAdd
             // 
             this.btnCorrectResponseAdd.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCorrectResponseAdd.Location = new System.Drawing.Point(10, 180);
+            this.btnCorrectResponseAdd.Location = new System.Drawing.Point(411, 179);
             this.btnCorrectResponseAdd.Name = "btnCorrectResponseAdd";
             this.btnCorrectResponseAdd.Size = new System.Drawing.Size(154, 25);
             this.btnCorrectResponseAdd.TabIndex = 54;
-            this.btnCorrectResponseAdd.Text = "Add Response(s)";
+            this.btnCorrectResponseAdd.Text = "Add New Response(s)";
             this.btnCorrectResponseAdd.UseVisualStyleBackColor = true;
+            this.btnCorrectResponseAdd.Click += new System.EventHandler(this.btnCorrectResponseAdd_Click);
             // 
             // lblColumnType
             // 
@@ -109,11 +113,12 @@
             // lstCorrectResponses
             // 
             this.lstCorrectResponses.FormattingEnabled = true;
-            this.lstCorrectResponses.Location = new System.Drawing.Point(170, 63);
+            this.lstCorrectResponses.Location = new System.Drawing.Point(571, 63);
             this.lstCorrectResponses.Name = "lstCorrectResponses";
             this.lstCorrectResponses.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lstCorrectResponses.Size = new System.Drawing.Size(235, 173);
             this.lstCorrectResponses.TabIndex = 52;
+            this.lstCorrectResponses.SelectedIndexChanged += new System.EventHandler(this.lstCorrectResponses_SelectedIndexChanged);
             // 
             // lblColumnScore
             // 
@@ -125,20 +130,43 @@
             this.lblColumnScore.TabIndex = 48;
             this.lblColumnScore.Text = "Score:";
             // 
-            // lblCorrectResponses
+            // lblCurrentResponses
             // 
-            this.lblCorrectResponses.AutoSize = true;
-            this.lblCorrectResponses.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCorrectResponses.Location = new System.Drawing.Point(7, 63);
-            this.lblCorrectResponses.Name = "lblCorrectResponses";
-            this.lblCorrectResponses.Size = new System.Drawing.Size(100, 13);
-            this.lblCorrectResponses.TabIndex = 51;
-            this.lblCorrectResponses.Text = "Correct Responses:";
+            this.lblCurrentResponses.AutoSize = true;
+            this.lblCurrentResponses.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblCurrentResponses.Location = new System.Drawing.Point(7, 63);
+            this.lblCurrentResponses.Name = "lblCurrentResponses";
+            this.lblCurrentResponses.Size = new System.Drawing.Size(100, 13);
+            this.lblCurrentResponses.TabIndex = 51;
+            this.lblCurrentResponses.Text = "Current Responses:";
+            // 
+            // lstCurrentResponses
+            // 
+            this.lstCurrentResponses.FormattingEnabled = true;
+            this.lstCurrentResponses.Location = new System.Drawing.Point(170, 63);
+            this.lstCurrentResponses.Name = "lstCurrentResponses";
+            this.lstCurrentResponses.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.lstCurrentResponses.Size = new System.Drawing.Size(235, 173);
+            this.lstCurrentResponses.TabIndex = 55;
+            this.lstCurrentResponses.SelectedIndexChanged += new System.EventHandler(this.lstCurrentResponses_SelectedIndexChanged);
+            // 
+            // btnCurrentToCorrectResponses
+            // 
+            this.btnCurrentToCorrectResponses.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnCurrentToCorrectResponses.Location = new System.Drawing.Point(411, 63);
+            this.btnCurrentToCorrectResponses.Name = "btnCurrentToCorrectResponses";
+            this.btnCurrentToCorrectResponses.Size = new System.Drawing.Size(154, 25);
+            this.btnCurrentToCorrectResponses.TabIndex = 56;
+            this.btnCurrentToCorrectResponses.Text = "Copy To Correct Responses";
+            this.btnCurrentToCorrectResponses.UseVisualStyleBackColor = true;
+            this.btnCurrentToCorrectResponses.Click += new System.EventHandler(this.btnCurrentToCorrectResponses_Click);
             // 
             // ProfileWizardColumnForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnCurrentToCorrectResponses);
+            this.Controls.Add(this.lstCurrentResponses);
             this.Controls.Add(this.txtColumnName);
             this.Controls.Add(this.lblColumnName);
             this.Controls.Add(this.btnCorrectResponseRemove);
@@ -148,9 +176,9 @@
             this.Controls.Add(this.txtScore);
             this.Controls.Add(this.lstCorrectResponses);
             this.Controls.Add(this.lblColumnScore);
-            this.Controls.Add(this.lblCorrectResponses);
+            this.Controls.Add(this.lblCurrentResponses);
             this.Name = "ProfileWizardColumnForm";
-            this.Size = new System.Drawing.Size(422, 252);
+            this.Size = new System.Drawing.Size(821, 252);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,6 +195,8 @@
         private System.Windows.Forms.TextBox txtScore;
         private System.Windows.Forms.ListBox lstCorrectResponses;
         private System.Windows.Forms.Label lblColumnScore;
-        private System.Windows.Forms.Label lblCorrectResponses;
+        private System.Windows.Forms.Label lblCurrentResponses;
+        private System.Windows.Forms.ListBox lstCurrentResponses;
+        private System.Windows.Forms.Button btnCurrentToCorrectResponses;
     }
 }

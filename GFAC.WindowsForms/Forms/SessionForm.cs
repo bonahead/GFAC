@@ -72,14 +72,23 @@ namespace GFAC.WindowsForms.Forms
         {
             SourceFile sf = new SourceFile(sourceFilePath_Name);
             SourceFile sourceFile = sf.Import();
+            _uniqueResponseCollection = sourceFile != null ?
+                UniqueResponseCollection.CollectUniqueResponses(sourceFile) :
+                null;
 
-            ProfileWizardForm pwf = new ProfileWizardForm(sourceFile);
+            ProfileWizardForm pwf = new ProfileWizardForm(sourceFile, _uniqueResponseCollection);
             DialogResult result = pwf.ShowWizard();
             if (result == DialogResult.OK)
+            {
                 _session.Profile = pwf.ReturnValue;
-            txtProfile.Text = _session.Profile_Filepath;
-        }
+                string filepath = string.IsNullOrEmpty(_session.Profile.FilePath_Name) ?
+                    Functions.SelectFile(FileType.Profile, true) :
+                    _session.Profile.FilePath_Name;
 
+                _session.Profile = Profile.ExportProfile(filepath, _session.Profile);
+                txtProfile.Text = _session.Profile_Filepath;
+            }            
+        }
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             ImportFile();

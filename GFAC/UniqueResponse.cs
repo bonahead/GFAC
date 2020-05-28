@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 
 namespace GFAC
@@ -43,19 +44,43 @@ namespace GFAC
             }
             return returnValue;
         }
+        public static UniqueResponseCollection CollectUniqueResponses(SourceFile sourceFile)
+        {
+            if (sourceFile == null)
+                return null;
 
-        private static UniqueResponseCollection GetUniqueResponse(UniqueResponseCollection urc, Row row)
+            UniqueResponseCollection returnValue = new UniqueResponseCollection();
+            returnValue.SourceFile = sourceFile;
+
+            bool firstRow = true;
+            foreach (Row row in returnValue.SourceFile.Rows)
+            {
+                if (firstRow)
+                {
+                    returnValue = GetColumnHeaders(returnValue, row, true);
+                    firstRow = false;
+                }
+                else
+                {
+                    returnValue = GetUniqueResponse(returnValue, row, true);
+                }
+            }
+            return returnValue;
+        }
+        private static UniqueResponseCollection GetUniqueResponse(UniqueResponseCollection urc, Row row, bool allColumns = false)
         {
             UniqueResponseCollection returnValue = urc;
             int colIndex = 0;
             int respIndex = 0;
             foreach (Column column in row.Columns)
             {
-                ColumnType columnType = urc.Profile.Columns.Count + 1 > colIndex ?
-                    urc.Profile.Columns[colIndex].Type :
-                    urc.Profile.DefaultType;
+                ColumnType columnType = allColumns ? 
+                    ColumnType.None :
+                    urc.Profile.Columns.Count + 1 > colIndex ?
+                        urc.Profile.Columns[colIndex].Type :
+                        urc.Profile.DefaultType;
 
-                if (columnType.Equals(ColumnType.Score))
+                if (columnType.Equals(ColumnType.Score) || allColumns)
                 {
                     if (!string.IsNullOrEmpty(column.ColumnValue))
                     {
@@ -64,7 +89,7 @@ namespace GFAC
                             returnValue.UniqueRepsonses[respIndex].Add(new UniqueResponse()
                             {
                                 Response = column.ColumnValue,
-                                Correct = urc.Profile.Columns[colIndex].CorrectResponses.Contains(column.ColumnValue)
+                                Correct = allColumns ? false : urc.Profile.Columns[colIndex].CorrectResponses.Contains(column.ColumnValue)
                             });
                         }
                     }
@@ -75,18 +100,21 @@ namespace GFAC
             return returnValue;
         }
 
-        private static UniqueResponseCollection GetColumnHeaders(UniqueResponseCollection urc, Row row)
+        private static UniqueResponseCollection GetColumnHeaders(UniqueResponseCollection urc, Row row, bool allColumns = false)
         {
             UniqueResponseCollection returnValue = urc;
             returnValue.UniqueRepsonses.Clear();
             int colIndex = 0;
             foreach (Column column in row.Columns)
             {
-                ColumnType columnType = urc.Profile.Columns.Count + 1 > colIndex ?
-                    urc.Profile.Columns[colIndex].Type :
-                    urc.Profile.DefaultType;
 
-                if (columnType.Equals(ColumnType.Score))
+                ColumnType columnType = allColumns ?
+                    ColumnType.None :
+                    urc.Profile.Columns.Count + 1 > colIndex ?
+                        urc.Profile.Columns[colIndex].Type :
+                        urc.Profile.DefaultType;
+
+                if (columnType.Equals(ColumnType.Score) || allColumns)
                 {
                     returnValue.UniqueRepsonses.Add(new UniqueResponses());
                 }

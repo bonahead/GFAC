@@ -14,12 +14,14 @@ namespace GFAC.WindowsForms.Forms
     public partial class ProfileWizardForm : Form
     {
         private SourceFile SourceFile { get; set; }
+        private UniqueResponseCollection UniqueResponseCollection { get; set; }
         private WizardHost Wizard { get; set; }
         public Profile ReturnValue { get; set; }
-        public ProfileWizardForm(SourceFile sourceFile)
+        public ProfileWizardForm(SourceFile sourceFile, UniqueResponseCollection urc)
         {
             InitializeComponent();
             SourceFile = sourceFile;
+            UniqueResponseCollection = urc;
             CreateWizard();
         }
         public DialogResult ShowWizard()
@@ -41,7 +43,7 @@ namespace GFAC.WindowsForms.Forms
                 if (pageIndex == 0)
                 {
                     ProfileWizardOverallForm overallForm = (ProfileWizardOverallForm)page;
-                    returnValue.Name = overallForm.Name;
+                    returnValue.Name = overallForm.ProfileName;
                     returnValue.DefaultType = GetColumnType(overallForm.DefaultColumnType);
                 }
                 else
@@ -49,7 +51,7 @@ namespace GFAC.WindowsForms.Forms
                     ProfileWizardColumnForm columnForm = (ProfileWizardColumnForm)page;
                     returnValue.Columns.Add(new ProfileColumn()
                     {
-                        Name = columnForm.Name,
+                        Name = columnForm.ColumnName,
                         Type = GetColumnType(columnForm.ColumnType),
                         Score = columnForm.Score,
                         CorrectResponses = columnForm.CorrectResponses
@@ -80,14 +82,16 @@ namespace GFAC.WindowsForms.Forms
             Wizard = new WizardHost();
             Wizard.WizardCompleted += new WizardHost.WizardCompletedEventHandler(host_WizardCompleted);
             int pageIndex = 2;
+            int columnIndex = 0;
             //Overall Profile Properties
 
             Wizard.WizardPages.Add(1, new ProfileWizardOverallForm());
 
             foreach(Column column in SourceFile.Rows[0].Columns)
             {
-                Wizard.WizardPages.Add(pageIndex, new ProfileWizardColumnForm());
+                Wizard.WizardPages.Add(pageIndex, new ProfileWizardColumnForm(column, UniqueResponseCollection.UniqueRepsonses[columnIndex]));
                 pageIndex++;
+                columnIndex++;
             }
         }
         void host_WizardCompleted()
