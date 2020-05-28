@@ -183,24 +183,5 @@ namespace GFAC.WindowsForms.Forms
                 PopulateTabResponses();
             }
         }
-      
-        //private void DataGridSource_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        //{//TODO Make DataGridHandler
-        //    //ProfileColumnType
-        //    //Grey = None
-        //    //Blue = Report
-        //    //Green = Score
-        //    DataGridSource.EnableHeadersVisualStyles = false;
-        //    DataGridViewColumn column = DataGridSource.Columns[e.ColumnIndex];
-
-        //    if (column.HeaderCell.Style.BackColor == Color.Gray)
-        //        column.HeaderCell.Style.BackColor = Color.Blue;
-        //    else if (column.HeaderCell.Style.BackColor == Color.Blue)
-        //        column.HeaderCell.Style.BackColor = Color.Green;
-        //    else if (column.HeaderCell.Style.BackColor == Color.Green)
-        //        column.HeaderCell.Style.BackColor = Color.Gray;
-        //    else
-        //        column.HeaderCell.Style.BackColor = Color.Blue;
-        //}
-    }
+     }
 }

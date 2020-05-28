@@ -130,7 +130,6 @@ namespace GFAC
                     colIndex++;
                 }
 
-                //TODO: Sort Ranking
                 Rows rankedRows = new Rows();
                 firstRow = true;
                 int rank = 0;

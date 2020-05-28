@@ -32,7 +32,6 @@ namespace GFAC.WindowsForms.Forms
         public bool IsBusy => throw new NotImplementedException();
         public bool PageValid
         {
-            //TODO: ReturnValue is not correct
             get {
                 bool ColumnNameFilled = !string.IsNullOrEmpty(txtColumnName.Text);
                 bool ScoreFilled = cboColumnType.Text.Equals("Score") ?
