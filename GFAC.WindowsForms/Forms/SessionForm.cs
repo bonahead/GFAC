@@ -67,7 +67,6 @@ namespace GFAC.WindowsForms.Forms
             if (!string.IsNullOrEmpty(txtInputFile.Text))
                 ImportFile();
         }
-
         private void ProcessNoProfile(string sourceFilePath_Name)
         {
             SourceFile sf = new SourceFile(sourceFilePath_Name);
@@ -165,7 +164,6 @@ namespace GFAC.WindowsForms.Forms
             dataGridResponses.Refresh();
         }
         #endregion
-
         private void ImportFile()
         {
             if (_session == null)

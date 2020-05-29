@@ -10,7 +10,6 @@ namespace GFAC.WindowsForms.Forms
     public partial class OverallSessionForm : GFACForm
     {
         public OverallSession _overallSession = new OverallSession();
-
         public OverallSessionForm()
         {
             InitializeComponent();
