@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GFAC", "GFAC\GFAC.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBG.SimpleWizard", "..\MBG.SimpleWizard\MBG.SimpleWizard\MBG.SimpleWizard.csproj", "{3C8EA16A-48CC-4BE5-9B7C-BB513DD71599}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "GFAC Setup", "GFAC Setup\GFAC Setup.vdproj", "{75F164D7-2437-468F-86B0-6F77A5E73B26}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Google Forms Answer Checker", "GFAC Setup\GFAC Setup.vdproj", "{75F164D7-2437-468F-86B0-6F77A5E73B26}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,19 +17,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A9F0F406-DF6A-48EA-A9F0-6C180AD01C2A}.Debug|Any CPU.ActiveCfg = Release|Any CPU
-		{A9F0F406-DF6A-48EA-A9F0-6C180AD01C2A}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{A9F0F406-DF6A-48EA-A9F0-6C180AD01C2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9F0F406-DF6A-48EA-A9F0-6C180AD01C2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9F0F406-DF6A-48EA-A9F0-6C180AD01C2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9F0F406-DF6A-48EA-A9F0-6C180AD01C2A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{279C267A-0CB2-47F3-8489-3A0B9C4C613C}.Debug|Any CPU.ActiveCfg = Release|Any CPU
-		{279C267A-0CB2-47F3-8489-3A0B9C4C613C}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{279C267A-0CB2-47F3-8489-3A0B9C4C613C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{279C267A-0CB2-47F3-8489-3A0B9C4C613C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{279C267A-0CB2-47F3-8489-3A0B9C4C613C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{279C267A-0CB2-47F3-8489-3A0B9C4C613C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3C8EA16A-48CC-4BE5-9B7C-BB513DD71599}.Debug|Any CPU.ActiveCfg = Release|Any CPU
-		{3C8EA16A-48CC-4BE5-9B7C-BB513DD71599}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{3C8EA16A-48CC-4BE5-9B7C-BB513DD71599}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C8EA16A-48CC-4BE5-9B7C-BB513DD71599}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C8EA16A-48CC-4BE5-9B7C-BB513DD71599}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C8EA16A-48CC-4BE5-9B7C-BB513DD71599}.Release|Any CPU.Build.0 = Release|Any CPU
-		{75F164D7-2437-468F-86B0-6F77A5E73B26}.Debug|Any CPU.ActiveCfg = Release
+		{75F164D7-2437-468F-86B0-6F77A5E73B26}.Debug|Any CPU.ActiveCfg = Debug
 		{75F164D7-2437-468F-86B0-6F77A5E73B26}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution

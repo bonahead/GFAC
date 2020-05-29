@@ -2,6 +2,7 @@
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace GFAC
 {
@@ -47,7 +48,7 @@ namespace GFAC
                     while (!fileContents.EndOfStream)
                     {
                         string line = fileContents.ReadLine();
-                        List<string> values = line.Split(_separator).ToList();
+                        List<string> values = Regex.Split(line, @""",""").ToList();                            
 
                         Row currentRow = new Row();
                         foreach (string value in values)

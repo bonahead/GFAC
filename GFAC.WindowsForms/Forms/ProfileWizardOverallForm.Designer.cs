@@ -82,7 +82,7 @@
             this.Controls.Add(this.lblProfileName);
             this.Controls.Add(this.txtName);
             this.Name = "ProfileWizardOverallForm";
-            this.Size = new System.Drawing.Size(422, 69);
+            this.Size = new System.Drawing.Size(830, 275);
             this.ResumeLayout(false);
             this.PerformLayout();
 
