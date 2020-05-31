@@ -133,7 +133,7 @@ namespace GFAC
             Rows rankedRows = new Rows();
             int rank = 0;
             int scorePrevious = 0;
-            foreach(Row row in responderRows.OrderBy(r => int.Parse(r.Columns[r.Columns.Count -1].ColumnValue)))
+            foreach(Row row in responderRows.OrderByDescending(r => int.Parse(r.Columns[r.Columns.Count -1].ColumnValue)))
             {
                 if (int.Parse(row.Columns[row.Columns.Count - 1].ColumnValue) != scorePrevious)
                 {
